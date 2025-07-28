@@ -2,11 +2,12 @@ declare global {
     namespace NodeJS {
         interface ProcessEnv {
             URI: string
+            SECRET: string
         }
     }
 }
 
-export type data = {
+export type PostReturn = {
     code: `${"67" | "68" | "69" | "72" | "85" | "92"}-${"1" | "2" | "3" | "4" | "5" | "6" | "7"}${"A" | "B"}${
         | "1"
         | "2"}`

@@ -656,7 +656,6 @@
                             <label class="form-label" for="year">Academic Year</label>
                             <select class="form-select" id="year" name="year" required>
                                 <option value="">Select Year</option>
-                                <option value="2026">2026</option>
                                 <option value="2025">2025</option>
                             </select>
                         </div>
@@ -698,8 +697,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="group">Group (Optional)</label>
-                            <select class="form-select" id="group" name="group">
+                            <label class="form-label" for="group">Group</label>
+                            <select class="form-select" id="group" name="group" required>
                                 <option value="">Select Group</option>
                                 <option value="A">Group A</option>
                                 <option value="B">Group B</option>
@@ -930,7 +929,7 @@
 
                 const link = document.createElement("a")
                 link.href = url
-                link.download = "class_routine.json"
+                link.download = `${currentRoutineData.code}.json`
                 document.body.appendChild(link)
                 link.click()
                 document.body.removeChild(link)
@@ -1074,7 +1073,7 @@
                 }
 
                 // Save the PDF
-                doc.save("class_routine.pdf")
+                doc.save(`${currentRoutineData.code}.pdf`)
             }
 
             // Auto-detect system theme on page load

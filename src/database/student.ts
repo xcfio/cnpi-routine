@@ -1,4 +1,4 @@
-import { pgTable, uuid, varchar, json, check } from "drizzle-orm/pg-core"
+import { pgTable, uuid, varchar, jsonb, check } from "drizzle-orm/pg-core"
 import { sql } from "drizzle-orm"
 import { v7 } from "uuid"
 
@@ -10,9 +10,9 @@ export const student = pgTable(
             .primaryKey()
             .$defaultFn(() => v7()),
         year: varchar("year", { length: 4 }).notNull().default(new Date().getFullYear().toString()),
-        code: varchar("code", { length: 15 }).notNull(),
+        code: varchar("code", { length: 6 }).notNull(),
         load: varchar("load").notNull(),
-        class: json("class")
+        class: jsonb("class")
             .$type<{
                 [day in "Sunday" | "Monday" | "Tuesday" | "Wednesday" | "Thursday"]: {
                     [period in "1" | "2" | "3" | "4" | "5" | "6" | "7"]: {
@@ -24,7 +24,7 @@ export const student = pgTable(
                 }
             }>()
             .notNull(),
-        teacher: json("teacher")
+        teacher: jsonb("teacher")
             .$type<
                 Array<{
                     teacher: {

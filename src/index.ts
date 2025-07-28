@@ -1,11 +1,11 @@
 import { post, put } from "./routes"
-import { readFileSync } from "node:fs"
+import { html } from "./public"
 import Fastify from "fastify"
 
 export default async () => {
     const fastify = Fastify({ logger: false })
 
-    fastify.get("/", (_, reply) => reply.type("text/html").send(readFileSync("./public/index.html")))
+    fastify.get("/", (_, reply) => reply.type("text/html").send(html))
     fastify.get("/status", (_, reply) => reply.code(200).send({ status: "ok" }))
 
     const classSchedule = {

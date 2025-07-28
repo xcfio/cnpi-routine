@@ -1,3 +1,4 @@
+export const html = `
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -806,12 +807,12 @@
 
                 // Set routine info
                 const deptName = getDepartmentName(formData.department)
-                routineInfo.textContent = `${deptName} | Semester ${formData.semester} | Shift ${
+                routineInfo.textContent = \`\${deptName} | Semester \${formData.semester} | Shift \${
                     formData.shift
-                } | Year ${formData.year}${formData.group ? ` | Group ${formData.group}` : ""}`
+                } | Year \${formData.year}\${formData.group ? \` | Group \${formData.group}\` : ""}\`
 
                 // Create routine table
-                let tableHTML = `
+                let tableHTML = \`
                 <table class="routine-table">
                     <thead>
                         <tr>
@@ -823,7 +824,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                `
+                \`
 
                 // Populate table with class data
                 const days = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"]
@@ -835,28 +836,28 @@
 
                         for (const period in dayClasses) {
                             const classInfo = dayClasses[period]
-                            tableHTML += `
+                            tableHTML += \`
                             <tr>
-                                ${
+                                \${
                                     isFirstRow
-                                        ? `<td rowspan="${Object.keys(dayClasses).length}"><strong>${day}</strong></td>`
+                                        ? \`<td rowspan="\${Object.keys(dayClasses).length}"><strong>\${day}</strong></td>\`
                                         : ""
                                 }
-                                <td class="class-time">${classInfo.time || period}</td>
-                                <td class="subject-name">${classInfo.subject || "N/A"}</td>
-                                <td class="teacher-name">${classInfo.teacher || "N/A"}</td>
-                                <td><span class="classroom">${classInfo.classroom || "N/A"}</span></td>
+                                <td class="class-time">\${classInfo.time || period}</td>
+                                <td class="subject-name">\${classInfo.subject || "N/A"}</td>
+                                <td class="teacher-name">\${classInfo.teacher || "N/A"}</td>
+                                <td><span class="classroom">\${classInfo.classroom || "N/A"}</span></td>
                             </tr>
-                            `
+                            \`
                             isFirstRow = false
                         }
                     }
                 }
 
-                tableHTML += `
+                tableHTML += \`
                     </tbody>
                 </table>
-                `
+                \`
 
                 routineContent.innerHTML = tableHTML
 
@@ -865,21 +866,21 @@
                     let teacherHTML = "<h3>Teachers</h3>"
 
                     data.teacher.forEach((item) => {
-                        teacherHTML += `
+                        teacherHTML += \`
                         <div class="teacher-card">
                             <div class="teacher-info">
                                 <div class="teacher-details">
-                                    <h4>${item.teacher.name}</h4>
-                                    <p><strong>Code:</strong> ${item.teacher.code}</p>
-                                    <p><strong>Designation:</strong> ${item.teacher.designation}</p>
-                                    <p><strong>Mobile:</strong> ${item.teacher.mobile}</p>
+                                    <h4>\${item.teacher.name}</h4>
+                                    <p><strong>Code:</strong> \${item.teacher.code}</p>
+                                    <p><strong>Designation:</strong> \${item.teacher.designation}</p>
+                                    <p><strong>Mobile:</strong> \${item.teacher.mobile}</p>
                                 </div>
                                 <div class="subject-badge">
-                                    ${item.subject.name} (${item.subject.code})
+                                    \${item.subject.name} (\${item.subject.code})
                                 </div>
                             </div>
                         </div>
-                        `
+                        \`
                     })
 
                     teacherList.innerHTML = teacherHTML
@@ -909,7 +910,7 @@
                 const routineContent = document.getElementById("routineContent")
                 const teacherList = document.getElementById("teacherList")
 
-                routineContent.innerHTML = `<div class="error-message">${message}</div>`
+                routineContent.innerHTML = \`<div class="error-message">\${message}</div>\`
                 teacherList.innerHTML = ""
 
                 document.getElementById("routineInfo").textContent = "Error occurred"
@@ -929,7 +930,7 @@
 
                 const link = document.createElement("a")
                 link.href = url
-                link.download = `${currentRoutineData.code}.json`
+                link.download = \`\${currentRoutineData.code}.json\`
                 document.body.appendChild(link)
                 link.click()
                 document.body.removeChild(link)
@@ -1054,15 +1055,15 @@
 
                     currentRoutineData.teacher.forEach((item) => {
                         doc.setFont("helvetica", "bold")
-                        doc.text(`${item.teacher.name} (${item.teacher.code})`, 10, yPosition)
+                        doc.text(\`\${item.teacher.name} (\${item.teacher.code})\`, 10, yPosition)
                         yPosition += 5
 
                         doc.setFont("helvetica", "normal")
-                        doc.text(`Designation: ${item.teacher.designation}`, 10, yPosition)
+                        doc.text(\`Designation: \${item.teacher.designation}\`, 10, yPosition)
                         yPosition += 5
-                        doc.text(`Mobile: ${item.teacher.mobile}`, 10, yPosition)
+                        doc.text(\`Mobile: \${item.teacher.mobile}\`, 10, yPosition)
                         yPosition += 5
-                        doc.text(`Subject: ${item.subject.name} (${item.subject.code})`, 10, yPosition)
+                        doc.text(\`Subject: \${item.subject.name} (\${item.subject.code})\`, 10, yPosition)
                         yPosition += 10
 
                         if (yPosition > 280) {
@@ -1073,7 +1074,7 @@
                 }
 
                 // Save the PDF
-                doc.save(`${currentRoutineData.code}.pdf`)
+                doc.save(\`\${currentRoutineData.code}.pdf\`)
             }
 
             // Auto-detect system theme on page load
@@ -1154,3 +1155,4 @@
         </script>
     </body>
 </html>
+`

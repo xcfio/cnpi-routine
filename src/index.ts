@@ -13,10 +13,13 @@ export default async () => {
         schema: {
             body: {
                 type: "object",
-                required: ["id", "key"],
+                required: ["year", "semester", "department", "shift"],
                 properties: {
-                    id: { type: "string" },
-                    key: { type: "string" }
+                    year: { type: "string" },
+                    department: { type: "string" },
+                    semester: { type: "string" },
+                    shift: { type: "string" },
+                    group: { type: "string" }
                 }
             },
             response: {
@@ -27,15 +30,345 @@ export default async () => {
                         load: { type: "string" },
                         class: {
                             type: "object",
-                            additionalProperties: {
-                                type: "object",
-                                additionalProperties: {
+                            properties: {
+                                Sunday: {
                                     type: "object",
                                     properties: {
-                                        time: { type: "string" },
-                                        subject: { type: "string" },
-                                        teacher: { type: "string" },
-                                        classroom: { type: "string" }
+                                        "1": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "2": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "3": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "4": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "5": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "6": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "7": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        }
+                                    }
+                                },
+                                Monday: {
+                                    type: "object",
+                                    properties: {
+                                        "1": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "2": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "3": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "4": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "5": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "6": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "7": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        }
+                                    }
+                                },
+                                Tuesday: {
+                                    type: "object",
+                                    properties: {
+                                        "1": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "2": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "3": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "4": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "5": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "6": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "7": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        }
+                                    }
+                                },
+                                Wednesday: {
+                                    type: "object",
+                                    properties: {
+                                        "1": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "2": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "3": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "4": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "5": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "6": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "7": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        }
+                                    }
+                                },
+                                Thursday: {
+                                    type: "object",
+                                    properties: {
+                                        "1": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "2": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "3": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "4": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "5": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "6": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        },
+                                        "7": {
+                                            type: "object",
+                                            properties: {
+                                                time: { type: "string" },
+                                                subject: { type: "string" },
+                                                teacher: { type: "string" },
+                                                classroom: { type: "string" }
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -80,7 +413,7 @@ export default async () => {
                 }
             }
         },
-        handler: () => {}
+        handler: (request, reply) => JSON.parse(readFileSync("D:/Project/test/routine/2025-85-1B1.json", "utf-8"))
     })
 
     fastify.addHook("onError", (_, reply, error) => {

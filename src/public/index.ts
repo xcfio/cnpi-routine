@@ -577,6 +577,7 @@ export const html = `
                 text-align: center;
             }
 
+            /* Mobile Optimizations */
             @media (max-width: 768px) {
                 .container {
                     padding: 1rem;
@@ -585,37 +586,275 @@ export const html = `
                 .theme-toggle {
                     top: 1rem;
                     right: 1rem;
+                    padding: 0.6rem;
+                    font-size: 1rem;
                 }
 
                 .logo {
                     font-size: 2.5rem;
                 }
 
+                .subtitle {
+                    font-size: 1rem;
+                }
+
+                .institute-name {
+                    font-size: 0.9rem;
+                }
+
+                .form-section {
+                    padding: 1.5rem;
+                    border-radius: 15px;
+                }
+
+                .form-title {
+                    font-size: 1.5rem;
+                    margin-bottom: 1.5rem;
+                }
+
                 .form-grid {
                     grid-template-columns: 1fr;
+                    gap: 1rem;
+                }
+
+                .form-select {
+                    padding: 0.8rem 1rem;
+                    font-size: 0.95rem;
+                }
+
+                .btn {
+                    padding: 0.9rem 1.5rem;
+                    font-size: 0.95rem;
+                }
+
+                .result-section {
+                    padding: 1.5rem;
+                    border-radius: 15px;
                 }
 
                 .result-header {
                     flex-direction: column;
                     align-items: stretch;
+                    gap: 1.5rem;
+                }
+
+                .result-title {
+                    font-size: 1.3rem;
+                    text-align: center;
+                }
+
+                .result-info {
+                    text-align: center;
+                    font-size: 0.8rem;
                 }
 
                 .download-buttons {
                     justify-content: center;
+                    gap: 0.8rem;
                 }
 
+                .btn-secondary,
+                .btn-success {
+                    padding: 0.7rem 1rem;
+                    font-size: 0.85rem;
+                    flex: 1;
+                    text-align: center;
+                }
+
+                /* Mobile Table Optimizations */
                 .routine-table {
-                    font-size: 0.9rem;
+                    font-size: 0.85rem;
+                    display: block;
+                    overflow-x: auto;
+                    white-space: nowrap;
+                    -webkit-overflow-scrolling: touch;
                 }
 
+                .routine-table thead,
+                .routine-table tbody,
                 .routine-table th,
+                .routine-table td,
+                .routine-table tr {
+                    display: block;
+                }
+
+                .routine-table thead tr {
+                    position: absolute;
+                    top: -9999px;
+                    left: -9999px;
+                }
+
+                .routine-table tr {
+                    background: var(--input-bg);
+                    border: 1px solid var(--border-color);
+                    border-radius: 8px;
+                    margin-bottom: 0.8rem;
+                    padding: 1rem;
+                    display: block;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                }
+
                 .routine-table td {
-                    padding: 0.7rem 0.5rem;
+                    border: none;
+                    padding: 0.5rem 0;
+                    text-align: left;
+                    white-space: normal;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                .routine-table td:before {
+                    content: attr(data-label);
+                    font-weight: 600;
+                    color: var(--text-secondary);
+                    font-size: 0.8rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                    flex-shrink: 0;
+                    margin-right: 1rem;
+                    min-width: 80px;
+                }
+
+                .class-time {
+                    font-size: 0.85rem;
+                }
+
+                .classroom {
+                    font-size: 0.75rem;
+                    padding: 0.25rem 0.5rem;
                 }
 
                 .teacher-info {
                     flex-direction: column;
                     align-items: stretch;
+                    text-align: center;
+                }
+
+                .teacher-list {
+                    padding: 1rem;
+                }
+
+                .teacher-card {
+                    padding: 0.8rem;
+                }
+
+                /* Gradient orbs mobile adjustment */
+                .gradient-orb:nth-child(1) {
+                    width: 200px;
+                    height: 200px;
+                }
+
+                .gradient-orb:nth-child(2) {
+                    width: 150px;
+                    height: 150px;
+                }
+
+                .gradient-orb:nth-child(3) {
+                    width: 180px;
+                    height: 180px;
+                }
+
+                /* Floating shapes mobile adjustment */
+                .shape:nth-child(1),
+                .shape:nth-child(2) {
+                    width: 60px;
+                    height: 60px;
+                }
+
+                .shape:nth-child(3),
+                .shape:nth-child(4),
+                .shape:nth-child(5) {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+
+            /* Extra small mobile devices */
+            @media (max-width: 480px) {
+                .container {
+                    padding: 0.8rem;
+                }
+
+                .logo {
+                    font-size: 2rem;
+                }
+
+                .subtitle {
+                    font-size: 0.9rem;
+                }
+
+                .form-section,
+                .result-section {
+                    padding: 1.2rem;
+                    border-radius: 12px;
+                }
+
+                .form-title {
+                    font-size: 1.3rem;
+                }
+
+                .form-select {
+                    padding: 0.7rem 0.8rem;
+                    font-size: 0.9rem;
+                }
+
+                .btn {
+                    padding: 0.8rem 1.2rem;
+                    font-size: 0.9rem;
+                }
+
+                .btn-secondary,
+                .btn-success {
+                    padding: 0.6rem 0.8rem;
+                    font-size: 0.8rem;
+                }
+
+                .routine-table {
+                    font-size: 0.8rem;
+                }
+
+                .routine-table tr {
+                    padding: 0.8rem;
+                    margin-bottom: 0.6rem;
+                }
+
+                .routine-table td {
+                    padding: 0.4rem 0;
+                }
+
+                .routine-table td:before {
+                    font-size: 0.75rem;
+                    min-width: 70px;
+                    margin-right: 0.8rem;
+                }
+
+                .teacher-list {
+                    padding: 0.8rem;
+                }
+
+                .teacher-card {
+                    padding: 0.6rem;
+                }
+            }
+
+            /* Landscape mobile orientation */
+            @media (max-width: 768px) and (orientation: landscape) {
+                .header {
+                    margin-bottom: 1.5rem;
+                }
+
+                .logo {
+                    font-size: 2rem;
+                }
+
+                .form-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 0.8rem;
+                }
+
+                .container {
+                    padding: 0.8rem;
                 }
             }
         </style>

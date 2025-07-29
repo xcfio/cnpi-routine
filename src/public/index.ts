@@ -1083,8 +1083,8 @@ export const html = `
                                         : ""
                                 }
                                 <td class="class-time">\${classInfo.time || period}</td>
-                                <td class="subject-name">\${classInfo.subject || "N/A"}</td>
-                                <td class="teacher-name">\${classInfo.teacher || "N/A"}</td>
+                                <td class="subject-name">\${classInfo.subject || ""}</td>
+                                <td class="teacher-name">\${classInfo.teacher || ""}</td>
                                 <td><span class="classroom">\${classInfo.classroom || "N/A"}</span></td>
                             </tr>
                             \`
@@ -1162,7 +1162,7 @@ export const html = `
                     return
                 }
 
-                const dataStr = JSON.stringify(currentRoutineData, null, 2)
+                const dataStr = JSON.stringify(currentRoutineData, null, 4)
                 const dataBlob = new Blob([dataStr], { type: "application/json" })
                 const url = URL.createObjectURL(dataBlob)
 
@@ -1206,7 +1206,7 @@ export const html = `
                 doc.setFont("helvetica", "bold")
 
                 const headers = ["Day", "Time", "Subject", "Teacher", "Room"]
-                const columnWidths = [25, 30, 60, 50, 25]
+                const columnWidths = [38, 38, 38, 38, 38]
                 let xPosition = 10
 
                 headers.forEach((header, index) => {
@@ -1244,7 +1244,7 @@ export const html = `
 
                             // Subject column
                             doc.rect(xPosition, yPosition, columnWidths[2], 10)
-                            const subject = classInfo.subject.split('(')[1]?.split(')')[0] || "N/A"
+                            const subject = classInfo.subject.split('(')[1]?.split(')')[0] || ""
                             doc.text(
                                 subject.length > 25 ? subject.substring(0, 22) + "..." : subject,
                                 xPosition + 2,
@@ -1254,7 +1254,7 @@ export const html = `
 
                             // Teacher column
                             doc.rect(xPosition, yPosition, columnWidths[3], 10)
-                            const teacher = classInfo.teacher.split('(')[1]?.split(')')[0] || "N/A"
+                            const teacher = classInfo.teacher.split('(')[1]?.split(')')[0] || ""
                             doc.text(
                                 teacher.length > 20 ? teacher.substring(0, 17) + "..." : teacher,
                                 xPosition + 2,
@@ -1264,7 +1264,7 @@ export const html = `
 
                             // Classroom column
                             doc.rect(xPosition, yPosition, columnWidths[4], 10)
-                            doc.text(classInfo.classroom || "N/A", xPosition + 2, yPosition + 7)
+                            doc.text(classInfo.classroom || "", xPosition + 2, yPosition + 7)
 
                             yPosition += 10
                             isFirstRow = false

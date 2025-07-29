@@ -7,7 +7,7 @@ export async function put(
     reply: FastifyReply
 ) {
     try {
-        const { key, year = new Date().getFullYear().toString() } = request.query
+        const { key, year } = request.query
         console.log(key)
         if (!key) return reply.code(400).send({ error: "Key is required" })
         if (key !== process.env.SECRET) return reply.code(403).send({ error: "Forbidden" })

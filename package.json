@@ -6,7 +6,7 @@
     "author": "xcfio",
     "license": "MIT",
     "scripts": {
-        "dev": "netlify dev --port=7200 --no-open",
+        "dev": "netlify dev --port=7200 --no-open --offline",
         "test": "tsc --noEmit"
     },
     "dependencies": {

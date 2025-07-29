@@ -18,8 +18,8 @@ export const html = `
 
             :root {
                 --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-                --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+                --secondary-gradient: linear-gradient(135deg, #000428 0%, #004e92 100%);
+                --success-gradient: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
                 --danger-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
 
                 /* Light mode */
@@ -587,6 +587,11 @@ export const html = `
 
             /* Mobile Optimizations */
             @media (max-width: 768px) {
+                td.desktop-day,
+                tr > td.desktop-day[rowspan] {
+                  display: none !important;
+                }
+
                 .mobile-day-section {
                     display: table-row;
                     background: var(--primary-gradient) !important;
@@ -606,10 +611,6 @@ export const html = `
                     text-transform: uppercase;
                     letter-spacing: 1px;
                     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-                }
-
-                .desktop-day {
-                    display: none;
                 }
 
                 .routine-table tr:not(.mobile-day-section) {
@@ -1128,7 +1129,7 @@ export const html = `
                             tableHTML += \`
                             <tr>
                                 \${
-                                    isFirstRow && window.innerWidth > 768
+                                    isFirstRow
                                         ? \`<td rowspan="\${
                                             Object.keys(dayClasses).length
                                         }" class="desktop-day"><strong>\${day}</strong></td>\`

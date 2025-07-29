@@ -577,8 +577,49 @@ export const html = `
                 text-align: center;
             }
 
+            .mobile-day-section {
+                display: none;
+            }
+
+            .desktop-day {
+                display: table-cell;
+            }
+
             /* Mobile Optimizations */
             @media (max-width: 768px) {
+                .mobile-day-section {
+                    display: table-row;
+                    background: var(--primary-gradient) !important;
+                }
+
+                .day-header {
+                    background: var(--primary-gradient) !important;
+                    border: none !important;
+                    padding: 1rem !important;
+                    text-align: center;
+                }
+
+                .day-name {
+                    color: white;
+                    font-weight: 700;
+                    font-size: 1.1rem;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+                }
+
+                .desktop-day {
+                    display: none;
+                }
+
+                .routine-table tr:not(.mobile-day-section) {
+                    margin-bottom: 0.5rem;
+                }
+
+                .routine-table tr:not(.mobile-day-section):last-of-type {
+                    margin-bottom: 1.5rem;
+                }
+
                 .container {
                     padding: 1rem;
                 }
@@ -1071,21 +1112,34 @@ export const html = `
                 for (const day of days) {
                     if (data.class && data.class[day]) {
                         const dayClasses = data.class[day]
-                        let isFirstRow = true
 
+                        // Add mobile-only day section
+                        tableHTML += \`
+                        <tr class="mobile-day-section">
+                            <td colspan="5" class="day-header">
+                                <div class="day-name">\${day}</div>
+                            </td>
+                        </tr>
+                        \`
+
+                        let isFirstRow = true
                         for (const period in dayClasses) {
                             const classInfo = dayClasses[period]
                             tableHTML += \`
                             <tr>
                                 \${
-                                    isFirstRow
-                                        ? \`<td rowspan="\${Object.keys(dayClasses).length}"><strong>\${day}</strong></td>\`
+                                    isFirstRow && window.innerWidth > 768
+                                        ? \`<td rowspan="\${
+                                            Object.keys(dayClasses).length
+                                        }" class="desktop-day"><strong>\${day}</strong></td>\`
                                         : ""
                                 }
-                                <td class="class-time">\${classInfo.time || period}</td>
-                                <td class="subject-name">\${classInfo.subject || ""}</td>
-                                <td class="teacher-name">\${classInfo.teacher || ""}</td>
-                                <td><span class="classroom">\${classInfo.classroom || "N/A"}</span></td>
+                                <td class="class-time" data-label="Time">\${classInfo.time || period}</td>
+                                <td class="subject-name" data-label="Subject">\${classInfo.subject || "N/A"}</td>
+                                <td class="teacher-name" data-label="Teacher">\${classInfo.teacher || "N/A"}</td>
+                                <td data-label="Room"><span class="classroom">\${
+                                    classInfo.classroom || "N/A"
+                                }</span></td>
                             </tr>
                             \`
                             isFirstRow = false

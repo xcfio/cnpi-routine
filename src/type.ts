@@ -23,15 +23,9 @@ export type PostReturn = {
         }
     }
     teacher: Array<{
-        teacher: {
-            name: string
-            code: string
-            designation: string
-            mobile: string
-        }
-        subject: {
-            name: string
-            code: string
-        }
+        name: string
+        designation: string
+        mobile: string
+        subject: string
     }>
 }

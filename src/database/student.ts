@@ -9,7 +9,9 @@ export const student = pgTable(
             .unique()
             .primaryKey()
             .$defaultFn(() => v7()),
-        year: varchar("year", { length: 4 }).notNull().default(new Date().getFullYear().toString()),
+        year: varchar("year", { length: 4 })
+            .notNull()
+            .$defaultFn(() => new Date().getFullYear().toString()),
         code: varchar("code", { length: 6 }).notNull(),
         load: varchar("load").notNull(),
         class: jsonb("class")
@@ -27,16 +29,10 @@ export const student = pgTable(
         teacher: jsonb("teacher")
             .$type<
                 Array<{
-                    teacher: {
-                        name: string
-                        code: string
-                        designation: string
-                        mobile: string
-                    }
-                    subject: {
-                        name: string
-                        code: string
-                    }
+                    name: string
+                    designation: string
+                    mobile: string
+                    subject: string
                 }>
             >()
             .notNull()

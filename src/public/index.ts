@@ -1109,13 +1109,12 @@ export const html = `
                         <div class="teacher-card">
                             <div class="teacher-info">
                                 <div class="teacher-details">
-                                    <h4>\${item.teacher.name}</h4>
-                                    <p><strong>Code:</strong> \${item.teacher.code}</p>
-                                    <p><strong>Designation:</strong> \${item.teacher.designation}</p>
-                                    <p><strong>Mobile:</strong> \${item.teacher.mobile}</p>
+                                    <h4>\${item.name}</h4>
+                                    <p><strong>Designation:</strong> \${item.designation}</p>
+                                    <p><strong>Mobile:</strong> \${item.mobile}</p>
                                 </div>
                                 <div class="subject-badge">
-                                    \${item.subject.name} (\${item.subject.code})
+                                    \${item.subject}
                                 </div>
                             </div>
                         </div>
@@ -1245,7 +1244,7 @@ export const html = `
 
                             // Subject column
                             doc.rect(xPosition, yPosition, columnWidths[2], 10)
-                            const subject = classInfo.subject || "N/A"
+                            const subject = classInfo.subject.split('(')[1]?.split(')')[0] || "N/A"
                             doc.text(
                                 subject.length > 25 ? subject.substring(0, 22) + "..." : subject,
                                 xPosition + 2,
@@ -1255,7 +1254,7 @@ export const html = `
 
                             // Teacher column
                             doc.rect(xPosition, yPosition, columnWidths[3], 10)
-                            const teacher = classInfo.teacher || "N/A"
+                            const teacher = classInfo.teacher.split('(')[1]?.split(')')[0] || "N/A"
                             doc.text(
                                 teacher.length > 20 ? teacher.substring(0, 17) + "..." : teacher,
                                 xPosition + 2,
@@ -1294,15 +1293,15 @@ export const html = `
 
                     currentRoutineData.teacher.forEach((item) => {
                         doc.setFont("helvetica", "bold")
-                        doc.text(\`\${item.teacher.name} (\${item.teacher.code})\`, 10, yPosition)
+                        doc.text(\`\${item.name}\`, 10, yPosition)
                         yPosition += 5
 
                         doc.setFont("helvetica", "normal")
-                        doc.text(\`Designation: \${item.teacher.designation}\`, 10, yPosition)
+                        doc.text(\`Designation: \${item.designation}\`, 10, yPosition)
                         yPosition += 5
-                        doc.text(\`Mobile: \${item.teacher.mobile}\`, 10, yPosition)
+                        doc.text(\`Mobile: \${item.mobile}\`, 10, yPosition)
                         yPosition += 5
-                        doc.text(\`Subject: \${item.subject.name} (\${item.subject.code})\`, 10, yPosition)
+                        doc.text(\`Subject: \${item.subject}\`, 10, yPosition)
                         yPosition += 10
 
                         if (yPosition > 280) {

@@ -1,6 +1,7 @@
 import { FastifyRequest, FastifyReply } from "fastify"
 import { db, table } from "../database"
 import { and, eq } from "drizzle-orm"
+
 export async function post(
     request: FastifyRequest<{
         Body: {

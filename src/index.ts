@@ -8,7 +8,7 @@ export default async () => {
     fastify.get("/", (_, reply) => reply.type("text/html").send(html))
     fastify.get("/status", (_, reply) => reply.code(200).send({ status: "ok" }))
 
-    const classSchedule = {
+    const ClassSchedule = {
         type: "object",
         properties: {
             time: { type: "string" },
@@ -18,16 +18,16 @@ export default async () => {
         }
     }
 
-    const dailySchedule = {
+    const DailySchedule = {
         type: "object",
         properties: {
-            "1": classSchedule,
-            "2": classSchedule,
-            "3": classSchedule,
-            "4": classSchedule,
-            "5": classSchedule,
-            "6": classSchedule,
-            "7": classSchedule
+            "1": ClassSchedule,
+            "2": ClassSchedule,
+            "3": ClassSchedule,
+            "4": ClassSchedule,
+            "5": ClassSchedule,
+            "6": ClassSchedule,
+            "7": ClassSchedule
         }
     }
 
@@ -55,11 +55,11 @@ export default async () => {
                         class: {
                             type: "object",
                             properties: {
-                                Sunday: dailySchedule,
-                                Monday: dailySchedule,
-                                Tuesday: dailySchedule,
-                                Wednesday: dailySchedule,
-                                Thursday: dailySchedule
+                                Sunday: DailySchedule,
+                                Monday: DailySchedule,
+                                Tuesday: DailySchedule,
+                                Wednesday: DailySchedule,
+                                Thursday: DailySchedule
                             }
                         },
                         teacher: {
@@ -67,22 +67,10 @@ export default async () => {
                             items: {
                                 type: "object",
                                 properties: {
-                                    teacher: {
-                                        type: "object",
-                                        properties: {
-                                            name: { type: "string" },
-                                            code: { type: "string" },
-                                            designation: { type: "string" },
-                                            mobile: { type: "string" }
-                                        }
-                                    },
-                                    subject: {
-                                        type: "object",
-                                        properties: {
-                                            name: { type: "string" },
-                                            code: { type: "string" }
-                                        }
-                                    }
+                                    name: { type: "string" },
+                                    designation: { type: "string" },
+                                    mobile: { type: "string" },
+                                    subject: { type: "string" }
                                 }
                             }
                         }
@@ -125,11 +113,11 @@ export default async () => {
                     class: {
                         type: "object",
                         properties: {
-                            Sunday: dailySchedule,
-                            Monday: dailySchedule,
-                            Tuesday: dailySchedule,
-                            Wednesday: dailySchedule,
-                            Thursday: dailySchedule
+                            Sunday: DailySchedule,
+                            Monday: DailySchedule,
+                            Tuesday: DailySchedule,
+                            Wednesday: DailySchedule,
+                            Thursday: DailySchedule
                         }
                     },
                     teacher: {
@@ -137,22 +125,10 @@ export default async () => {
                         items: {
                             type: "object",
                             properties: {
-                                teacher: {
-                                    type: "object",
-                                    properties: {
-                                        name: { type: "string" },
-                                        code: { type: "string" },
-                                        designation: { type: "string" },
-                                        mobile: { type: "string" }
-                                    }
-                                },
-                                subject: {
-                                    type: "object",
-                                    properties: {
-                                        name: { type: "string" },
-                                        code: { type: "string" }
-                                    }
-                                }
+                                name: { type: "string" },
+                                designation: { type: "string" },
+                                mobile: { type: "string" },
+                                subject: { type: "string" }
                             }
                         }
                     }

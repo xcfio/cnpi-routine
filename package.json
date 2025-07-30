@@ -10,7 +10,7 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "test": "tsx --NoEmit"
+        "test": "tsc --NoEmit"
     },
     "dependencies": {
         "drizzle-orm": "^0.44.3",

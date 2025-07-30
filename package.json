@@ -6,19 +6,25 @@
     "author": "xcfio",
     "license": "MIT",
     "scripts": {
-        "dev": "netlify dev --port=7200 --no-open --offline",
-        "test": "tsc --noEmit"
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
     },
     "dependencies": {
-        "@netlify/functions": "^4.1.9",
         "drizzle-orm": "^0.44.3",
-        "fastify": "^5.4.0",
+        "jspdf": "^3.0.1",
+        "next": "15.4.5",
         "postgres": "^3.4.7",
-        "serverless-http": "^3.2.0",
+        "react": "19.1.1",
+        "react-dom": "19.1.1",
         "uuid": "^11.1.0"
     },
     "devDependencies": {
-        "@types/node": "^24.0.10",
-        "drizzle-kit": "^0.31.4"
+        "typescript": "^5.8.3",
+        "drizzle-kit": "^0.31.4",
+        "@types/node": "^24.1.0",
+        "@types/react": "^19.1.9",
+        "@types/react-dom": "^19.1.7"
     }
 }

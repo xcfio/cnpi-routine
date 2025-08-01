@@ -31,7 +31,7 @@ export async function PUT(request: NextRequest) {
     try {
         const { searchParams } = new URL(request.url)
         const key = searchParams.get("key")
-        const year = searchParams.get("year")
+        const year = Number(searchParams.get("year") ?? new Date().getFullYear())
 
         if (!key) {
             return NextResponse.json({ error: "Key is required" }, { status: 400 })
@@ -41,7 +41,7 @@ export async function PUT(request: NextRequest) {
             return NextResponse.json({ error: "Forbidden" }, { status: 403 })
         }
 
-        if (!year || Number.isNaN(Number(year))) {
+        if (Number.isNaN(year) || year < 2000 || year > 9999) {
             return NextResponse.json({ error: "Invalid year" }, { status: 400 })
         }
 
@@ -55,10 +55,10 @@ export async function PUT(request: NextRequest) {
 
         const [result] = await db
             .insert(table.student)
-            .values({ ...routine, year })
+            .values({ ...routine, year: year.toString() })
             .returning()
 
-        return NextResponse.json(result, { status: 201 })
+        return NextResponse.json({ message: "Routine created successfully", id: result.id }, { status: 201 })
     } catch (error) {
         console.log(error)
         return NextResponse.json({ error: "Internal Server Error" }, { status: 500 })

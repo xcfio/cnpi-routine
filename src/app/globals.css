@@ -7,7 +7,7 @@
 }
 
 :root {
-    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --primary-gradient: linear-gradient(145deg, #0f4c81 0%, #1f8ecb 40%, #0f2027 100%);
     --secondary-gradient: linear-gradient(135deg, #000428 0%, #004e92 100%);
     --success-gradient: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
     --danger-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
@@ -455,7 +455,7 @@ body {
 }
 
 .routine-table th {
-    background: var(--primary-gradient);
+    background: var(--secondary-gradient);
     color: white;
     font-weight: 600;
     text-transform: uppercase;
@@ -488,7 +488,7 @@ body {
 }
 
 .classroom {
-    background: var(--primary-gradient);
+    background: var(--success-gradient);
     color: white;
     padding: 0.3rem 0.6rem;
     border-radius: 6px;
@@ -583,7 +583,6 @@ body {
     }
 
     .day-header {
-        background: var(--primary-gradient) !important;
         border: none !important;
         padding: 1rem !important;
         text-align: center;

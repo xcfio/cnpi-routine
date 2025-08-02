@@ -15,7 +15,7 @@ A modern, responsive web application for managing class routines at Chapainawabg
 ## Project Links
 
 Netlify: https://routine-cnpi.netlify.app  
-Vercel: https://cnpi-routine.vercel.app
+Vercel: https://routine-cnpi.vercel.app
 
 ## Deploy
 

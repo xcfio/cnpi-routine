@@ -54,6 +54,27 @@ export const downloadPDF = (data: RoutineData, routineInfo: string) => {
 
         // Table data
         const days = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"]
+        const room = {
+            BEL: "BEL",
+            CHE: "CHE",
+            DEL: "DEL",
+            DRG: "DRG (S-513)",
+            EPL: "EPL",
+            EWM: "EWM (S-314)",
+            FLD: "FLD",
+            FLU: "FLU (N-207)",
+            FPL: "FPL",
+            HWL: "HWL",
+            ICT: "ICT (N-310)",
+            MnT: "MnT",
+            MSL: "MSL",
+            NWL: "NWL (S-417)",
+            PHY: "PHY (N-413)",
+            QCL: "QCL",
+            RAC: "RAC",
+            SWL: "SWL (S-420)",
+            WSM: "WSM"
+        }
 
         for (const day of days) {
             if (data.class && data.class[day]) {
@@ -62,6 +83,11 @@ export const downloadPDF = (data: RoutineData, routineInfo: string) => {
 
                 for (const period in dayClasses) {
                     const classInfo = dayClasses[period]
+                    const classroom = classInfo.classroom
+                        ? !classInfo.classroom.includes("-")
+                            ? room[classInfo.classroom as keyof typeof room]
+                            : classInfo.classroom
+                        : "N/A"
                     xPosition = 10
 
                     // Day column (only for first row of each day)
@@ -98,7 +124,7 @@ export const downloadPDF = (data: RoutineData, routineInfo: string) => {
 
                     // Classroom column
                     doc.rect(xPosition, yPosition, columnWidths[4], 10)
-                    doc.text(classInfo.classroom || "", xPosition + 2, yPosition + 7)
+                    doc.text(classroom, xPosition + 2, yPosition + 7)
 
                     yPosition += 10
                     isFirstRow = false

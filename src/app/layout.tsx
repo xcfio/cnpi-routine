@@ -37,7 +37,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <meta property="og:site_name" content="CNPI Routine" />
                 <meta property="og:type" content="website" />
                 <meta property="og:image:alt" content="Chapainawabganj Polytechnic Institute Class Routine" />
-                <meta name="google-site-verification" content="FgPL-EloG0FSVK8ZcvI3SDpBeCMXwoRKcP9c3kxVEAU" />
             </head>
             <body>{children}</body>
         </html>

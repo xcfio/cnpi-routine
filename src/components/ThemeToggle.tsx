@@ -3,37 +3,37 @@
 import { useState, useEffect } from "react"
 
 export default function ThemeToggle() {
-    const [isDark, setIsDark] = useState(false)
+    const [isLight, setIsLight] = useState(false)
 
     useEffect(() => {
         // Check if there's a saved theme preference
         const savedTheme = localStorage.getItem("theme")
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+        const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches
 
-        const shouldBeDark = savedTheme === "dark" || (!savedTheme && prefersDark)
-        setIsDark(shouldBeDark)
+        const shouldBeLight = savedTheme === "light" || (!savedTheme && prefersLight)
+        setIsLight(shouldBeLight)
 
-        if (shouldBeDark) {
-            document.body.setAttribute("data-theme", "dark")
+        if (shouldBeLight) {
+            document.body.setAttribute("data-theme", "light")
         }
     }, [])
 
     const toggleTheme = () => {
-        const newTheme = !isDark
-        setIsDark(newTheme)
+        const newTheme = !isLight
+        setIsLight(newTheme)
 
         if (newTheme) {
-            document.body.setAttribute("data-theme", "dark")
-            localStorage.setItem("theme", "dark")
+            document.body.setAttribute("data-theme", "light")
+            localStorage.setItem("theme", "light")
         } else {
             document.body.removeAttribute("data-theme")
-            localStorage.setItem("theme", "light")
+            localStorage.setItem("theme", "dark")
         }
     }
 
     return (
         <div className="theme-toggle" onClick={toggleTheme}>
-            <span>{isDark ? "☀️" : "🌙"}</span>
+            <span>{isLight ? "🌙" : "☀️"}</span>
         </div>
     )
 }

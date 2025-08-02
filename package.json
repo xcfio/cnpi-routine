@@ -6,7 +6,7 @@
     "author": "xcfio",
     "license": "MIT",
     "scripts": {
-        "dev": "next dev",
+        "dev": "next dev --port=7200",
         "build": "next build",
         "start": "next start",
         "lint": "next lint",

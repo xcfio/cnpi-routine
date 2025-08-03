@@ -203,13 +203,13 @@ export default function CreditsPage() {
                         {/* License */}
                         <div className="section">
                             <h2 className="section-title">License</h2>
-                            <div className="license-card">
-                                <div className="license-info">
-                                    <span className="license-badge">MIT License</span>
-                                    <p>
+                            <div className="contributors-list">
+                                <div className="contributor-simple">
+                                    <span className="contributor-name">MIT License</span>
+                                    <span className="contributor-work">
                                         This project is open source and available under the MIT License. You are free to
                                         use, modify, and distribute this software in accordance with the license terms.
-                                    </p>
+                                    </span>
                                 </div>
                             </div>
                         </div>

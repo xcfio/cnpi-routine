@@ -254,33 +254,6 @@
     border-radius: 2px;
 }
 
-/* Designer Card */
-.designer-card {
-    background: var(--input-bg);
-    border-radius: 15px;
-    padding: 2rem;
-    text-align: center;
-    border: 1px solid var(--border-color);
-}
-
-.designer-info h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
-}
-
-.designer-info p {
-    color: var(--text-secondary);
-    margin-bottom: 0.3rem;
-    font-size: 1rem;
-}
-
-.email {
-    color: #667eea !important;
-    font-weight: 500;
-}
-
 /* Thanks Card */
 .thanks-card {
     background: var(--input-bg);
@@ -351,6 +324,13 @@
     border-radius: 15px;
     padding: 1.5rem;
     border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.tech-category:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.1);
+    border-color: rgba(102, 126, 234, 0.3);
 }
 
 .tech-category h3 {
@@ -396,32 +376,6 @@
     font-weight: 500;
 }
 
-/* License Card */
-.license-card {
-    background: var(--input-bg);
-    border-radius: 15px;
-    padding: 2rem;
-    border: 1px solid var(--border-color);
-    text-align: center;
-}
-
-.license-badge {
-    background: var(--success-gradient);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    display: inline-block;
-    margin-bottom: 1rem;
-}
-
-.license-info p {
-    color: var(--text-secondary);
-    line-height: 1.6;
-    font-size: 1rem;
-}
-
 /* Contact Grid */
 .contact-grid {
     display: grid;
@@ -443,6 +397,7 @@
 .contact-item:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: rgba(102, 126, 234, 0.3);
 }
 
 .contact-icon {

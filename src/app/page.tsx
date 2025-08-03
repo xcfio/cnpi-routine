@@ -140,7 +140,7 @@ export default function Home() {
 
                     <div className="footer-bottom">
                         <p className="footer-copyright">
-                            © {new Date().getFullYear()} Class Routine. Licensed under{" "}
+                            © {new Date().getFullYear()} Omar Faruk. Licensed under{" "}
                             <a
                                 href="https://opensource.org/licenses/MIT"
                                 target="_blank"
@@ -150,7 +150,7 @@ export default function Home() {
                                 MIT License
                             </a>
                             {" and "}
-                            <a href="/credits" target="_blank" className="footer-link">
+                            <a href="/credits" className="footer-link">
                                 Credits
                             </a>
                         </p>

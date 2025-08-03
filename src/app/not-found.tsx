@@ -38,84 +38,77 @@ export default function NotFound() {
 
     return (
         <>
-            <head>
-                <title>Not Found - CNPI Routine</title>
-                <meta property="og:site_name" content="CNPI Routine" />
-                <meta property="og:type" content="website" />
-            </head>
-            <body>
-                <div className="not-found-container">
-                    {/* Animated background elements */}
-                    <div className="background-particles">
-                        {particles.map((particle, i) => (
-                            <div
-                                key={i}
-                                className="particle"
-                                style={{
-                                    left: particle.left,
-                                    top: particle.top,
-                                    animationDelay: particle.delay,
-                                    animationDuration: particle.duration
-                                }}
-                            />
-                        ))}
+            <div className="not-found-container">
+                {/* Animated background elements */}
+                <div className="background-particles">
+                    {particles.map((particle, i) => (
+                        <div
+                            key={i}
+                            className="particle"
+                            style={{
+                                left: particle.left,
+                                top: particle.top,
+                                animationDelay: particle.delay,
+                                animationDuration: particle.duration
+                            }}
+                        />
+                    ))}
+                </div>
+
+                {/* Floating geometric shapes */}
+                <div className="floating-shapes">
+                    <div className="shape shape-square" style={{ animationDuration: "20s" }} />
+                    <div className="shape shape-circle" style={{ animationDelay: "1s" }} />
+                    <div className="shape shape-ring" style={{ animationDelay: "2s" }} />
+                </div>
+
+                <div className={`content ${mounted ? "mounted" : ""}`}>
+                    {/* Main 404 Text with Shadow/Layered Effect */}
+                    <div className="text-404-container">
+                        <h1 className={`text-404 ${glitchActive ? "glitch-active" : ""}`}>404</h1>
+
+                        {/* Glitch overlay */}
+                        {glitchActive && (
+                            <>
+                                <h1 className="text-404-glitch text-404-glitch-red">404</h1>
+                                <h1 className="text-404-glitch text-404-glitch-cyan">404</h1>
+                            </>
+                        )}
                     </div>
 
-                    {/* Floating geometric shapes */}
-                    <div className="floating-shapes">
-                        <div className="shape shape-square" style={{ animationDuration: "20s" }} />
-                        <div className="shape shape-circle" style={{ animationDelay: "1s" }} />
-                        <div className="shape shape-ring" style={{ animationDelay: "2s" }} />
+                    {/* Subtitle */}
+                    <div className="subtitle-container">
+                        <h2 className="subtitle">Oops! Page Not Found</h2>
+                        <p className="description">
+                            The page you're looking for seems to have vanished into the digital void. Don't worry, we'll
+                            help you find your way back.
+                        </p>
                     </div>
 
-                    <div className={`content ${mounted ? "mounted" : ""}`}>
-                        {/* Main 404 Text with Shadow/Layered Effect */}
-                        <div className="text-404-container">
-                            <h1 className={`text-404 ${glitchActive ? "glitch-active" : ""}`}>404</h1>
-
-                            {/* Glitch overlay */}
-                            {glitchActive && (
-                                <>
-                                    <h1 className="text-404-glitch text-404-glitch-red">404</h1>
-                                    <h1 className="text-404-glitch text-404-glitch-cyan">404</h1>
-                                </>
-                            )}
+                    {/* Animated Icon */}
+                    <div className="icon-container">
+                        <div className="icon-wrapper">
+                            <Wifi className="wifi-icon" />
+                            <div className="icon-pulse" />
                         </div>
+                    </div>
 
-                        {/* Subtitle */}
-                        <div className="subtitle-container">
-                            <h2 className="subtitle">Oops! Page Not Found</h2>
-                            <p className="description">
-                                The page you're looking for seems to have vanished into the digital void. Don't worry,
-                                we'll help you find your way back.
-                            </p>
-                        </div>
-
-                        {/* Animated Icon */}
-                        <div className="icon-container">
-                            <div className="icon-wrapper">
-                                <Wifi className="wifi-icon" />
-                                <div className="icon-pulse" />
+                    {/* Action Button */}
+                    <div className="button-container">
+                        <button onClick={handleGoBack} className="go-back-button">
+                            <div className="button-content">
+                                <ArrowLeft className="arrow-icon" />
+                                Go Back
                             </div>
-                        </div>
+                        </button>
+                    </div>
 
-                        {/* Action Button */}
-                        <div className="button-container">
-                            <button onClick={handleGoBack} className="go-back-button">
-                                <div className="button-content">
-                                    <ArrowLeft className="arrow-icon" />
-                                    Go Back
-                                </div>
-                            </button>
-                        </div>
-
-                        {/* Error Code */}
-                        <div className="error-code">
-                            <p className="error-text">ERROR_CODE: PAGE_NOT_FOUND_404</p>
-                        </div>
+                    {/* Error Code */}
+                    <div className="error-code">
+                        <p className="error-text">ERROR_CODE: PAGE_NOT_FOUND_404</p>
                     </div>
                 </div>
-            </body>
+            </div>
         </>
     )
 }

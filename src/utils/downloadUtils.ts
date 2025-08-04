@@ -67,7 +67,7 @@ export const downloadPDF = (data: RoutineData, routineInfo: string) => {
                         ? !classInfo.classroom.includes("-")
                             ? room[classInfo.classroom as keyof typeof room]
                             : classInfo.classroom
-                        : "N/A"
+                        : ""
                     xPosition = 10
 
                     // Day column (only for first row of each day)

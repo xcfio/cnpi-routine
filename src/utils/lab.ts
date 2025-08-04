@@ -1,0 +1,21 @@
+export const room = {
+    BEL: "BEL (S-317)",
+    CHE: "CHE (S-114)",
+    DEL: "DEL (N-313)",
+    DRG: "DRG (S-513)",
+    EPL: "EPL (S-516)",
+    EWM: "EWM (S-314)",
+    FLD: "FLD (S-113)",
+    FLU: "FLU (N-207)",
+    FPL: "FPL (N-509)",
+    HWL: "HWL (N-416)",
+    ICT: "ICT (N-310)",
+    MnT: "MnT (S-212)",
+    MSL: "MSL (S-112)",
+    NWL: "NWL (S-417)",
+    PHY: "PHY (N-413)",
+    QCL: "QCL (N-512)",
+    RAC: "RAC (S-215)",
+    SWL: "SWL (S-420)",
+    WSM: "WSM (S-115)"
+}

@@ -1,4 +1,5 @@
 import { RoutineData } from "@/types"
+import { room } from "./lab"
 
 export const downloadJSON = (data: RoutineData) => {
     const dataStr = JSON.stringify(data, null, 4)
@@ -54,27 +55,6 @@ export const downloadPDF = (data: RoutineData, routineInfo: string) => {
 
         // Table data
         const days = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"]
-        const room = {
-            BEL: "BEL",
-            CHE: "CHE",
-            DEL: "DEL",
-            DRG: "DRG (S-513)",
-            EPL: "EPL",
-            EWM: "EWM (S-314)",
-            FLD: "FLD",
-            FLU: "FLU (N-207)",
-            FPL: "FPL",
-            HWL: "HWL",
-            ICT: "ICT (N-310)",
-            MnT: "MnT",
-            MSL: "MSL",
-            NWL: "NWL (S-417)",
-            PHY: "PHY (N-413)",
-            QCL: "QCL",
-            RAC: "RAC",
-            SWL: "SWL (S-420)",
-            WSM: "WSM"
-        }
 
         for (const day of days) {
             if (data.class && data.class[day]) {

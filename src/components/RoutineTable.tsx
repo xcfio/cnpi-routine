@@ -1,6 +1,7 @@
 "use client"
 
 import { RoutineData } from "@/types"
+import { room } from "@/utils/lab"
 
 interface RoutineTableProps {
     data: RoutineData
@@ -8,28 +9,6 @@ interface RoutineTableProps {
 
 export default function RoutineTable({ data }: RoutineTableProps) {
     const days = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"]
-    const room = {
-        BEL: "BEL",
-        CHE: "CHE",
-        DEL: "DEL",
-        DRG: "DRG (S-513)",
-        EPL: "EPL",
-        EWM: "EWM (S-314)",
-        FLD: "FLD",
-        FLU: "FLU (N-207)",
-        FPL: "FPL",
-        HWL: "HWL",
-        ICT: "ICT (N-310)",
-        MnT: "MnT",
-        MSL: "MSL",
-        NWL: "NWL (S-417)",
-        PHY: "PHY (N-413)",
-        QCL: "QCL",
-        RAC: "RAC",
-        SWL: "SWL (S-420)",
-        WSM: "WSM"
-    }
-
     return (
         <table className="routine-table">
             <thead>

@@ -11,7 +11,7 @@ export interface FormData {
     department: string
     semester: string
     shift: string
-    group?: string
+    group: string
 }
 
 export interface ClassInfo {

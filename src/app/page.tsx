@@ -65,7 +65,7 @@ export default function Home() {
                 setRoutineData(result)
                 setFormData(data)
             } else {
-                setError(result.error || "An error occurred while fetching the routine.")
+                setError(result.message || result.error || "An error occurred while fetching the routine.")
             }
         } catch (err) {
             setError("Failed to connect to the server. Please try again.")

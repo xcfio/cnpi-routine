@@ -22,10 +22,6 @@ export default function RoutineForm({ onSubmit, loading }: RoutineFormProps) {
 
         // Remove empty group field if not selected
         const data = { ...formData }
-        if (!data.group) {
-            delete data.group
-        }
-
         onSubmit(data)
     }
 

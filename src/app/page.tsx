@@ -51,7 +51,7 @@ export default function Home() {
         setRoutineData(null)
 
         try {
-            const response = await fetch("/api/routine", {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/routine`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

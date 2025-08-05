@@ -6,28 +6,23 @@
     "author": "xcfio",
     "license": "MIT",
     "scripts": {
-        "dev": "next dev --port=7200",
+        "dev": "next dev --port=7700",
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
         "test": "tsc --NoEmit"
     },
     "dependencies": {
-        "drizzle-orm": "^0.44.3",
         "jspdf": "^3.0.1",
         "lucide-react": "^0.536.0",
         "next": "15.4.5",
-        "postgres": "^3.4.7",
         "react": "19.1.1",
-        "react-dom": "19.1.1",
-        "uuid": "^11.1.0"
+        "react-dom": "19.1.1"
     },
     "devDependencies": {
         "@types/node": "^24.1.0",
         "@types/react": "^19.1.9",
         "@types/react-dom": "^19.1.7",
-        "drizzle-kit": "^0.31.4",
         "typescript": "^5.8.3"
     }
 }
-

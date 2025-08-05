@@ -6,7 +6,6 @@ import AnimatedBackground from "@/components/AnimatedBackground"
 import ThemeToggle from "@/components/ThemeToggle"
 import RoutineForm from "@/components/RoutineForm"
 import RoutineResult from "@/components/RoutineResult"
-import { metadata } from "./layout"
 
 export default function Home() {
     const [routineData, setRoutineData] = useState<RoutineData | null>(null)

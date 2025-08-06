@@ -7,10 +7,10 @@
 [![Node.js Version](https://img.shields.io/badge/Node.js-24.x-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
 [![React](https://img.shields.io/badge/React-19.x-61DAFB?logo=react&logoColor=white)](https://react.dev/)
 [![Next.js](https://img.shields.io/badge/Next.js-15.x-000000?logo=next.js&logoColor=white)](https://nextjs.org/)
-[![Package Manager](https://img.shields.io/badge/pnpm-latest-orange?logo=pnpm)](https://pnpm.io/)
 [![Time](https://wakatime.com/badge/user/80f5dbf4-7bff-4748-82c6-2a8a3f3ec1c0/project/1d34a36d-70ad-48f6-a48f-ebf12f936819.svg)](https://wakatime.com/badge/user/80f5dbf4-7bff-4748-82c6-2a8a3f3ec1c0/project/1d34a36d-70ad-48f6-a48f-ebf12f936819)
+[![Discord](https://img.shields.io/discord/1211530334458617866?label=Join%20Community%20Discord&logo=discord)](https://discord.com/invite/FaCCaFM74Q)
 
-A modern, responsive web application for managing class routines at Chapainawabganj Polytechnic Institute. Built with Next.js 14, TypeScript, and featuring a beautiful animated UI.
+A modern, responsive web application for managing class routines at Chapainawabganj Polytechnic Institute. Built with Next.js 15, TypeScript, and featuring a beautiful animated UI.
 
 ## Project Links
 
@@ -45,35 +45,35 @@ Vercel: https://routine-cnpi.vercel.app
 
 ### Prerequisites
 
--   Node.js 20+
+-   Node.js 22+
 -   npm or pnpm
 
 ### Installation
 
-1. Clone the repository:
+1. **Clone the repository**
 
-```bash
-git clone <your-repo-url>
-cd class-routine-nextjs
-```
+    ```bash
+    git clone https://github.com/xcfio/cnpi-routine.git
+    cd cnpi-routine
+    ```
 
-2. Install dependencies:
+2. **Install dependencies**
 
-```bash
-npm install
-# or
-pnpm install
-```
+    ```bash
+    pnpm install
+    ```
 
-3. Run the development server:
+3. **Set up environment variables**
 
-```bash
-npm run dev
-# or
-pnpm dev
-```
+    ```bash
+    cp env.example .env
+    # Edit .env with your database credentials
+    ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+4. **Start development server**
+    ```bash
+    node --run dev
+    ```
 
 ## Project Structure
 
@@ -102,22 +102,14 @@ pnpm dev
 └── README.md
 ```
 
-## API Integration
-
-The application includes a mock API endpoint at `/api/routine`. To connect to your actual backend:
-
-1. Update the API endpoint in `app/api/routine/route.ts`
-2. Replace `YOUR_ACTUAL_API_ENDPOINT` with your backend URL
-3. Adjust the data structure if needed in `types/index.ts`
-
 ### API Request Format
 
 ```json
 {
     "year": "2025",
-    "department": "85",
-    "semester": "1",
-    "shift": "1",
+    "department": "68",
+    "semester": "7",
+    "shift": "2",
     "group": "A"
 }
 ```
@@ -126,23 +118,24 @@ The application includes a mock API endpoint at `/api/routine`. To connect to yo
 
 ```json
 {
-    "code": "85-1B1",
+    "code": "68-7A2",
+    "load": "27",
     "class": {
-        "Saturday": {
-            "8:00-9:00": {
-                "time": "8:00-9:00",
-                "subject": "Programming Fundamentals (67011)",
-                "teacher": "John Doe (CST)",
-                "classroom": "Lab-1"
+        "Sunday": {
+            "1": {
+                "time": "01:30-02:15",
+                "subject": "Business Communication (25831)",
+                "teacher": "Md. Azizur Rahman (AR)",
+                "classroom": "S-419"
             }
         }
     },
     "teacher": [
         {
-            "name": "John Doe",
-            "designation": "Instructor",
-            "mobile": "01700000000",
-            "subject": "Programming Fundamentals"
+            "name": "Md. Azizur Rahman (AR)",
+            "designation": "Instructor (Non-Tech-Accounting)",
+            "mobile": "01724441634",
+            "subject": "Business Communication (25831)"
         }
     ]
 }
@@ -176,17 +169,9 @@ Modify floating shapes and gradient orbs in `components/AnimatedBackground.tsx` 
 ## Building for Production
 
 ```bash
-npm run build
-npm run start
+node --run build
+node --run start
 ```
-
-## Deployment
-
-The application can be deployed to any platform that supports Next.js:
-
--   **Vercel** (recommended): `vercel --prod`
--   **Netlify**: Use the Next.js build plugin
--   **Docker**: Create a Dockerfile with Node.js base image
 
 ## Contributing
 

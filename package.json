@@ -5,6 +5,14 @@
     "type": "commonjs",
     "author": "xcfio",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/xcfio/cnpi-routine"
+    },
+    "bugs": {
+        "url": "https://github.com/xcfio/cnpi-routine/issues",
+        "email": "omarfaruksxp@gmail.com"
+    },
     "scripts": {
         "dev": "next dev --port=7700",
         "build": "next build",
@@ -26,3 +34,4 @@
         "typescript": "^5.8.3"
     }
 }
+

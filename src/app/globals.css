@@ -6,6 +6,7 @@
     box-sizing: border-box;
 }
 
+/* Dark mode */
 :root {
     --primary-gradient: linear-gradient(145deg, #0f4c81 0%, #1f8ecb 40%, #0f2027 100%);
     --secondary-gradient: linear-gradient(135deg, #000428 0%, #004e92 100%);
@@ -13,7 +14,6 @@
     --danger-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
     --footer-gradient: linear-gradient(270deg, #0f4c81 0%, #1f8ecb 100%);
 
-    /* Dark mode */
     --bg-primary: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
     --bg-secondary: #1a202c;
     --bg-card: rgba(45, 55, 72, 0.95);
@@ -26,8 +26,14 @@
     --input-border: #4a5568;
 }
 
+/* Light mode */
 [data-theme="light"] {
-    /* Light mode */
+    --primary-gradient: linear-gradient(145deg, #74b9ff 0%, #0984e3 40%, #00cec9 100%);
+    --secondary-gradient: linear-gradient(135deg, #64b1d4 0%, #3366e9 100%);
+    --success-gradient: linear-gradient(135deg, #34e6b3 0%, #29a78d 100%);
+    --danger-gradient: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+    --footer-gradient: linear-gradient(270deg, #a29bfe 0%, #6c5ce7 100%);
+
     --bg-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --bg-secondary: #ffffff;
     --bg-card: rgba(255, 255, 255, 0.95);
@@ -241,12 +247,12 @@ body {
 
 .theme-toggle {
     position: absolute;
-    top: 2rem;
-    right: 2rem;
+    top: 1rem;
+    right: 1rem;
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: 50px;
-    padding: 0.8rem;
+    padding: 0.4rem;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: var(--shadow);

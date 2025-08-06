@@ -70,6 +70,11 @@ export default function CreditsPage() {
                                         </span>
                                     </div>
                                     <div className="contributor-simple">
+                                        <span className="contributor-name">Sunam Ali</span>
+                                        <span className="contributor-dash">-</span>
+                                        <span className="contributor-work">Helped with beta testing and feedback</span>
+                                    </div>
+                                    <div className="contributor-simple">
                                         <span className="contributor-name">Md Ripon Islam</span>
                                         <span className="contributor-dash">-</span>
                                         <span className="contributor-work">

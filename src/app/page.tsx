@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from "react"
 import { FormData, RoutineData } from "@/types"
-import ThemeToggle from "@/components/ThemeToggle"
 import RoutineForm from "@/components/RoutineForm"
 import RoutineResult from "@/components/RoutineResult"
 import Footer from "@/components/Footer"
+import Banner from "@/components/Banner"
 
 export default function Home() {
     const [routineData, setRoutineData] = useState<RoutineData | null>(null)
@@ -16,8 +16,8 @@ export default function Home() {
     useEffect(() => {
         // Keyboard shortcuts
         const handleKeyDown = (e: KeyboardEvent) => {
-            // Ctrl/Cmd + Enter to submit form
-            if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
+            // Enter to submit form
+            if (e.key === "Enter") {
                 const form = document.querySelector("form")
                 if (form && !loading) {
                     form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }))
@@ -76,7 +76,6 @@ export default function Home() {
 
     return (
         <>
-            <ThemeToggle />
             <div className="bg-animation">
                 <div className="floating-shapes">
                     <div className="shape"></div>

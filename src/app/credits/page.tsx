@@ -1,4 +1,4 @@
-import ThemeToggle from "@/components/ThemeToggle"
+import Footer from "@/components/Footer"
 import type { Metadata } from "next"
 import "./style.css"
 
@@ -14,7 +14,6 @@ export const metadata: Metadata = {
 export default function CreditsPage() {
     return (
         <>
-            <ThemeToggle />
             <div className="credits-container">
                 {/* Animated Background */}
                 <div className="bg-animation">
@@ -249,6 +248,7 @@ export default function CreditsPage() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     )
 }

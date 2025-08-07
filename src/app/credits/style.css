@@ -27,7 +27,6 @@
 
 .credits-container {
     font-family: "Comfortaa", sans-serif;
-    background: var(--bg-primary);
     min-height: 100vh;
     color: var(--text-primary);
     position: relative;

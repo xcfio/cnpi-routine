@@ -1,14 +1,45 @@
 "use client"
+import { useState, useEffect } from "react"
 import "./Footer.css"
 
 export default function Footer() {
+    const [isLight, setIsLight] = useState(false)
+
+    useEffect(() => {
+        // Check if there's a saved theme preference
+        const savedTheme = localStorage.getItem("theme")
+        const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches
+
+        const shouldBeLight = savedTheme === "light" || (!savedTheme && prefersLight)
+        setIsLight(shouldBeLight)
+
+        if (shouldBeLight) {
+            document.body.setAttribute("data-theme", "light")
+        }
+    }, [])
+
+    const toggleTheme = () => {
+        const newTheme = !isLight
+        setIsLight(newTheme)
+
+        if (newTheme) {
+            document.body.setAttribute("data-theme", "light")
+            localStorage.setItem("theme", "light")
+        } else {
+            document.body.removeAttribute("data-theme")
+            localStorage.setItem("theme", "dark")
+        }
+    }
+
     return (
         <>
             <footer className="footer">
                 <div className="footer-container">
                     <div className="footer-content">
                         <div className="footer-info">
-                            <h3 className="footer-title">Class Routine</h3>
+                            <h3 className="footer-title">
+                                <a href="/">Class Routine</a>
+                            </h3>
                             <p className="footer-description">
                                 Academic Schedule Management System for Chapainawabganj Polytechnic Institute
                             </p>
@@ -44,6 +75,76 @@ export default function Footer() {
                                         Discord
                                     </a>
                                 </div>
+                            </div>
+
+                            <div className="footer-section">
+                                <h4>Theme</h4>
+                                <button
+                                    onClick={toggleTheme}
+                                    className="theme-toggle-button"
+                                    aria-label={`Switch to ${isLight ? "dark" : "light"} theme`}
+                                >
+                                    {isLight ? (
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                                        </svg>
+                                    ) : (
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                            <circle cx="12" cy="12" r="5" />
+                                            <line x1="12" y1="1" x2="12" y2="3" strokeWidth="2" stroke="currentColor" />
+                                            <line
+                                                x1="12"
+                                                y1="21"
+                                                x2="12"
+                                                y2="23"
+                                                strokeWidth="2"
+                                                stroke="currentColor"
+                                            />
+                                            <line
+                                                x1="4.22"
+                                                y1="4.22"
+                                                x2="5.64"
+                                                y2="5.64"
+                                                strokeWidth="2"
+                                                stroke="currentColor"
+                                            />
+                                            <line
+                                                x1="18.36"
+                                                y1="18.36"
+                                                x2="19.78"
+                                                y2="19.78"
+                                                strokeWidth="2"
+                                                stroke="currentColor"
+                                            />
+                                            <line x1="1" y1="12" x2="3" y2="12" strokeWidth="2" stroke="currentColor" />
+                                            <line
+                                                x1="21"
+                                                y1="12"
+                                                x2="23"
+                                                y2="12"
+                                                strokeWidth="2"
+                                                stroke="currentColor"
+                                            />
+                                            <line
+                                                x1="4.22"
+                                                y1="19.78"
+                                                x2="5.64"
+                                                y2="18.36"
+                                                strokeWidth="2"
+                                                stroke="currentColor"
+                                            />
+                                            <line
+                                                x1="18.36"
+                                                y1="5.64"
+                                                x2="19.78"
+                                                y2="4.22"
+                                                strokeWidth="2"
+                                                stroke="currentColor"
+                                            />
+                                        </svg>
+                                    )}
+                                    <span className="theme-text">{isLight ? "Dark Mode" : "Light Mode"}</span>
+                                </button>
                             </div>
                         </div>
                     </div>

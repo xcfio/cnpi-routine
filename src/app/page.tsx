@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import { FormData, RoutineData } from "@/types"
-import AnimatedBackground from "@/components/AnimatedBackground"
 import ThemeToggle from "@/components/ThemeToggle"
 import RoutineForm from "@/components/RoutineForm"
 import RoutineResult from "@/components/RoutineResult"
@@ -77,7 +76,18 @@ export default function Home() {
     return (
         <>
             <ThemeToggle />
-            <AnimatedBackground />
+            <div className="bg-animation">
+                <div className="floating-shapes">
+                    <div className="shape"></div>
+                    <div className="shape"></div>
+                    <div className="shape"></div>
+                    <div className="shape"></div>
+                    <div className="shape"></div>
+                </div>
+                <div className="gradient-orb"></div>
+                <div className="gradient-orb"></div>
+                <div className="gradient-orb"></div>
+            </div>
 
             <div className="container">
                 {/* Header */}

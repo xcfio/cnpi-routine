@@ -76,7 +76,7 @@ export default function Home() {
 
     return (
         <>
-            {new Date("2025-08-10T17:59:59Z") < new Date() || (
+            {new Date("2025-08-16T17:59:59Z") < new Date() || (
                 <Banner
                     type="info"
                     message="This project is currently in beta. We're actively working on improvements. Feel free to report any bugs or share feedback."

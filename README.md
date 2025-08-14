@@ -75,33 +75,6 @@ Vercel: https://routine-cnpi.vercel.app
     node --run dev
     ```
 
-## Project Structure
-
-```
-├── app/
-│   ├── api/
-│   │   └── routine/
-│   │       └── route.ts          # API endpoint for routine data
-│   ├── globals.css               # Global styles
-│   ├── layout.tsx               # Root layout
-│   └── page.tsx                 # Home page
-├── components/
-│   ├── AnimatedBackground.tsx   # Floating shapes animation
-│   ├── RoutineForm.tsx         # Form component
-│   ├── RoutineResult.tsx       # Results display
-│   ├── RoutineTable.tsx        # Routine table
-│   ├── TeacherList.tsx         # Teacher information
-│   └── ThemeToggle.tsx         # Theme switcher
-├── types/
-│   └── index.ts                # TypeScript type definitions
-├── utils/
-│   └── downloadUtils.ts        # PDF and JSON download utilities
-├── package.json
-├── tsconfig.json
-├── next.config.js
-└── README.md
-```
-
 ### API Request Format
 
 ```json

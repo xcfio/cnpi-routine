@@ -5,7 +5,6 @@ import { FormData, RoutineData } from "@/types"
 import RoutineForm from "@/components/RoutineForm"
 import RoutineResult from "@/components/RoutineResult"
 import Footer from "@/components/Footer"
-import Banner from "@/components/Banner"
 
 export default function Home() {
     const [routineData, setRoutineData] = useState<RoutineData | null>(null)
@@ -76,14 +75,6 @@ export default function Home() {
 
     return (
         <>
-            {new Date("2025-08-16T17:59:59Z") < new Date() || (
-                <Banner
-                    type="info"
-                    message="This project is currently in beta. We're actively working on improvements. Feel free to report any bugs or share feedback."
-                    actionText="Report Issue"
-                    onAction={() => window.open("https://github.com/xcfio/cnpi-routine/issues", "_blank")}
-                />
-            )}
             <div className="bg-animation">
                 <div className="floating-shapes">
                     <div className="shape"></div>

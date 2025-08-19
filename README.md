@@ -10,12 +10,25 @@
 [![Time](https://wakatime.com/badge/user/80f5dbf4-7bff-4748-82c6-2a8a3f3ec1c0/project/1d34a36d-70ad-48f6-a48f-ebf12f936819.svg)](https://wakatime.com/badge/user/80f5dbf4-7bff-4748-82c6-2a8a3f3ec1c0/project/1d34a36d-70ad-48f6-a48f-ebf12f936819)
 [![Discord](https://img.shields.io/discord/1211530334458617866?label=Join%20Community%20Discord&logo=discord)](https://discord.com/invite/FaCCaFM74Q)
 
-A modern, responsive web application for managing class routines at Chapainawabganj Polytechnic Institute. Built with Next.js 15, TypeScript, and featuring a beautiful animated UI.
+A modern, responsive web application for managing class routines at Chapainawabganj Polytechnic Institute. Built with Next.js 15, TypeScript, and featuring a beautiful animated UI. The frontend connects to a high-performance Fastify backend API for data management.
 
 ## Project Links
 
-Netlify: https://routine-cnpi.netlify.app  
-Vercel: https://routine-cnpi.vercel.app
+**Frontend:**
+- Netlify: https://routine-cnpi.netlify.app  
+- Vercel: https://routine-cnpi.vercel.app
+
+**Backend API:**
+- Repository: https://github.com/xcfio/api
+- Production API: https://api-xcfio.onrender.com/
+
+## Architecture
+
+This application follows a modern microservices architecture:
+
+- **Frontend**: Next.js 15 application handling UI, routing, and user interactions
+- **Backend**: Fastify API server managing data processing, database operations, and business logic
+- **Communication**: RESTful API calls between frontend and backend services
 
 ## Deploy
 
@@ -28,18 +41,25 @@ Vercel: https://routine-cnpi.vercel.app
 -   🎨 **Modern UI/UX**: Beautiful gradient backgrounds with floating animations
 -   🌙 **Dark/Light Theme**: Automatic theme detection with manual toggle
 -   📱 **Fully Responsive**: Optimized for all screen sizes
--   ⚡ **Fast Performance**: Built with Next.js 14 and TypeScript
+-   ⚡ **Fast Performance**: Built with Next.js 15 and TypeScript frontend + Fastify backend
 -   📄 **Export Options**: Download routines as JSON or PDF
 -   ⌨️ **Keyboard Shortcuts**: Quick actions with keyboard shortcuts
 -   🔍 **Form Validation**: Real-time form validation with visual feedback
+-   🚀 **High-Performance API**: Powered by Fastify for fast data processing
 
 ## Tech Stack
 
--   **Framework**: Next.js 14 (App Router)
+### Frontend
+-   **Framework**: Next.js 15 (App Router)
 -   **Language**: TypeScript
 -   **Styling**: CSS Modules with CSS Variables
 -   **PDF Generation**: jsPDF
 -   **Fonts**: Inter & JetBrains Mono
+
+### Backend
+-   **API Framework**: Fastify
+-   **Repository**: [xcfio/api](https://github.com/xcfio/api)
+-   **Deployment**: Render.com
 
 ## Getting Started
 
@@ -67,15 +87,42 @@ Vercel: https://routine-cnpi.vercel.app
 
     ```bash
     cp env.example .env
-    # Edit .env with your database credentials
+    # Edit .env with your API endpoint configuration
+    ```
+
+    Add your backend API URL:
+    ```env
+    NEXT_PUBLIC_API_URL=https://api-xcfio.onrender.com
+    # For local development: http://localhost:7200
     ```
 
 4. **Start development server**
     ```bash
-    node --run dev
+    node --run dev  # Runs on port 7700
     ```
 
-### API Request Format
+### Running with Local Backend
+
+If you want to run the backend locally as well:
+
+1. **Clone and setup the backend**
+    ```bash
+    git clone https://github.com/xcfio/api.git
+    cd api
+    npm install
+    npm run dev  # Runs on port 7200
+    ```
+
+2. **Update your frontend .env**
+    ```env
+    NEXT_PUBLIC_API_ENDPOINT=http://localhost:7200/
+    ```
+
+### API Integration
+
+The frontend communicates with the Fastify backend through RESTful API calls. Here's the request/response format:
+
+#### API Request Format
 
 ```json
 {
@@ -87,7 +134,7 @@ Vercel: https://routine-cnpi.vercel.app
 }
 ```
 
-### API Response Format
+#### API Response Format
 
 ```json
 {
@@ -139,12 +186,33 @@ The application uses CSS variables for theming. You can customize colors in `app
 
 Modify floating shapes and gradient orbs in `components/AnimatedBackground.tsx` and corresponding CSS animations.
 
+### API Configuration
+
+To use a different backend or switch between production and local development:
+
+1. Update `NEXT_PUBLIC_API_ENDPOINT` in your `.env` file
+2. Ensure the backend follows the same API contract shown above
+3. Update any API-specific configurations in your fetch calls
+
+**Local Development Ports:**
+- Frontend: http://localhost:7700
+- Backend: http://localhost:7200
+
 ## Building for Production
 
 ```bash
 node --run build
 node --run start
 ```
+
+## Performance Considerations
+
+The application is optimized for performance with:
+
+- **Static Generation**: Pre-rendered pages where possible
+- **Client-side Caching**: Efficient data fetching and caching strategies
+- **Fast Backend**: Fastify API provides sub-millisecond response times
+- **CDN Deployment**: Frontend deployed on global CDN (Netlify/Vercel)
 
 ## Contributing
 
@@ -154,10 +222,20 @@ node --run start
 4. Push to branch: `git push origin feature-name`
 5. Submit a pull request
 
+For backend contributions, please visit the [API repository](https://github.com/xcfio/api).
+
+## Related Repositories
+
+- **Backend API**: [xcfio/api](https://github.com/xcfio/api) - Fastify backend service
+- **Frontend**: [xcfio/cnpi-routine](https://github.com/xcfio/cnpi-routine) - This Next.js application
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Support
 
-For support or questions, please open an issue in the repository or contact the development team.
+For support or questions:
+- Frontend issues: Open an issue in this repository
+- Backend/API issues: Open an issue in the [API repository](https://github.com/xcfio/api)
+- General discussion: Join our [Discord community](https://discord.com/invite/FaCCaFM74Q)

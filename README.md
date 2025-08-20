@@ -15,10 +15,12 @@ A modern, responsive web application for managing class routines at Chapainawabg
 ## Project Links
 
 **Frontend:**
-- Netlify: https://routine-cnpi.netlify.app  
+
+- Netlify: https://routine-cnpi.netlify.app
 - Vercel: https://routine-cnpi.vercel.app
 
 **Backend API:**
+
 - Repository: https://github.com/xcfio/api
 - Production API: https://api-xcfio.onrender.com/
 
@@ -38,35 +40,37 @@ This application follows a modern microservices architecture:
 
 ## Features
 
--   🎨 **Modern UI/UX**: Beautiful gradient backgrounds with floating animations
--   🌙 **Dark/Light Theme**: Automatic theme detection with manual toggle
--   📱 **Fully Responsive**: Optimized for all screen sizes
--   ⚡ **Fast Performance**: Built with Next.js 15 and TypeScript frontend + Fastify backend
--   📄 **Export Options**: Download routines as JSON or PDF
--   ⌨️ **Keyboard Shortcuts**: Quick actions with keyboard shortcuts
--   🔍 **Form Validation**: Real-time form validation with visual feedback
--   🚀 **High-Performance API**: Powered by Fastify for fast data processing
+- 🎨 **Modern UI/UX**: Beautiful gradient backgrounds with floating animations
+- 🌙 **Dark/Light Theme**: Automatic theme detection with manual toggle
+- 📱 **Fully Responsive**: Optimized for all screen sizes
+- ⚡ **Fast Performance**: Built with Next.js 15 and TypeScript frontend + Fastify backend
+- 📄 **Export Options**: Download routines as JSON or PDF
+- ⌨️ **Keyboard Shortcuts**: Quick actions with keyboard shortcuts
+- 🔍 **Form Validation**: Real-time form validation with visual feedback
+- 🚀 **High-Performance API**: Powered by Fastify for fast data processing
 
 ## Tech Stack
 
 ### Frontend
--   **Framework**: Next.js 15 (App Router)
--   **Language**: TypeScript
--   **Styling**: CSS Modules with CSS Variables
--   **PDF Generation**: jsPDF
--   **Fonts**: Inter & JetBrains Mono
+
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: CSS Modules with CSS Variables
+- **PDF Generation**: jsPDF
+- **Fonts**: Inter & JetBrains Mono
 
 ### Backend
--   **API Framework**: Fastify
--   **Repository**: [xcfio/api](https://github.com/xcfio/api)
--   **Deployment**: Render.com
+
+- **API Framework**: Fastify
+- **Repository**: [xcfio/api](https://github.com/xcfio/api)
+- **Deployment**: Render.com
 
 ## Getting Started
 
 ### Prerequisites
 
--   Node.js 22+
--   npm or pnpm
+- Node.js 22+
+- npm or pnpm
 
 ### Installation
 
@@ -91,6 +95,7 @@ This application follows a modern microservices architecture:
     ```
 
     Add your backend API URL:
+
     ```env
     NEXT_PUBLIC_API_URL=https://api-xcfio.onrender.com
     # For local development: http://localhost:7200
@@ -106,6 +111,7 @@ This application follows a modern microservices architecture:
 If you want to run the backend locally as well:
 
 1. **Clone and setup the backend**
+
     ```bash
     git clone https://github.com/xcfio/api.git
     cd api
@@ -163,10 +169,10 @@ The frontend communicates with the Fastify backend through RESTful API calls. He
 
 ## Keyboard Shortcuts
 
--   `Ctrl/Cmd + Enter`: Submit form
--   `Ctrl/Cmd + D`: Download PDF (when routine is displayed)
--   `Ctrl/Cmd + J`: Download JSON (when routine is displayed)
--   `Ctrl/Cmd + T`: Toggle theme
+- `Ctrl/Cmd + Enter`: Submit form
+- `Ctrl/Cmd + D`: Download PDF (when routine is displayed)
+- `Ctrl/Cmd + J`: Download JSON (when routine is displayed)
+- `Ctrl/Cmd + T`: Toggle theme
 
 ## Customization
 
@@ -195,6 +201,7 @@ To use a different backend or switch between production and local development:
 3. Update any API-specific configurations in your fetch calls
 
 **Local Development Ports:**
+
 - Frontend: http://localhost:7700
 - Backend: http://localhost:7200
 
@@ -236,6 +243,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Support
 
 For support or questions:
+
 - Frontend issues: Open an issue in this repository
 - Backend/API issues: Open an issue in the [API repository](https://github.com/xcfio/api)
 - General discussion: Join our [Discord community](https://discord.com/invite/FaCCaFM74Q)

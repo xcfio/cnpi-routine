@@ -1,6 +1,7 @@
 declare global {
     namespace NodeJS {
         interface ProcessEnv {
+            NEXT_PUBLIC_CLOUDFLARE_SITE_KEY: string
             NEXT_PUBLIC_API_ENDPOINT: string
         }
     }
@@ -67,4 +68,22 @@ export type PostReturn = {
         mobile: string
         subject: string
     }>
+}
+// Extend Window interface for Turnstile
+
+declare global {
+    interface Window {
+        turnstile?: {
+            render: (
+                element: string,
+                options: {
+                    sitekey: string
+                    callback: (token: string) => void
+                    "expired-callback": () => void
+                    "error-callback": () => void
+                }
+            ) => string
+            reset: (widgetId: string) => void
+        }
+    }
 }

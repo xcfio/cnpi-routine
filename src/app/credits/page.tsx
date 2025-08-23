@@ -1,5 +1,22 @@
 import Footer from "@/components/Footer"
 import type { Metadata } from "next"
+import {
+    Circle,
+    Package,
+    Code2,
+    Atom,
+    Triangle,
+    Zap,
+    Database,
+    FileText,
+    Palette,
+    Hash,
+    Rocket,
+    Type,
+    Bug,
+    MessageCircle,
+    Mail
+} from "lucide-react"
 import "./style.css"
 
 export const metadata: Metadata = {
@@ -97,17 +114,17 @@ export default function CreditsPage() {
                                 <div className="tech-category">
                                     <h3>Runtime & Package Manager</h3>
                                     <div className="tech-item">
-                                        <span className="tech-icon">🟢</span>
+                                        <Circle className="tech-icon" size={16} color="#22c55e" />
                                         <span className="tech-name">Node.js</span>
                                         <span className="tech-version">v24.4.1</span>
                                     </div>
                                     <div className="tech-item">
-                                        <span className="tech-icon">📦</span>
+                                        <Package className="tech-icon" size={16} />
                                         <span className="tech-name">pnpm</span>
                                         <span className="tech-version">v10.14.0</span>
                                     </div>
                                     <div className="tech-item">
-                                        <span className="tech-icon">🔷</span>
+                                        <Code2 className="tech-icon" size={16} color="#3b82f6" />
                                         <span className="tech-name">TypeScript</span>
                                         <span className="tech-version">5.8.3</span>
                                     </div>
@@ -117,17 +134,17 @@ export default function CreditsPage() {
                                 <div className="tech-category">
                                     <h3>Frontend Framework</h3>
                                     <div className="tech-item">
-                                        <span className="tech-icon">⚛️</span>
+                                        <Atom className="tech-icon" size={16} color="#61dafb" />
                                         <span className="tech-name">React</span>
                                         <span className="tech-version">19.1.1</span>
                                     </div>
                                     <div className="tech-item">
-                                        <span className="tech-icon">⚛️</span>
+                                        <Atom className="tech-icon" size={16} color="#61dafb" />
                                         <span className="tech-name">React DOM</span>
                                         <span className="tech-version">19.1.1</span>
                                     </div>
                                     <div className="tech-item">
-                                        <span className="tech-icon">▲</span>
+                                        <Triangle className="tech-icon" size={16} />
                                         <span className="tech-name">Next.js</span>
                                         <span className="tech-version">15.4.5</span>
                                     </div>
@@ -137,17 +154,17 @@ export default function CreditsPage() {
                                 <div className="tech-category">
                                     <h3>Backend & Database</h3>
                                     <div className="tech-item">
-                                        <span className="tech-icon">⚡</span>
+                                        <Zap className="tech-icon" size={16} color="#f59e0b" />
                                         <span className="tech-name">Fastify</span>
                                         <span className="tech-version">5.4.0</span>
                                     </div>
                                     <div className="tech-item">
-                                        <span className="tech-icon">🗄️</span>
+                                        <Database className="tech-icon" size={16} />
                                         <span className="tech-name">Drizzle ORM</span>
                                         <span className="tech-version">0.44.3</span>
                                     </div>
                                     <div className="tech-item">
-                                        <span className="tech-icon">🐘</span>
+                                        <Database className="tech-icon" size={16} color="#336791" />
                                         <span className="tech-name">PostgreSQL</span>
                                         <span className="tech-version">17.5</span>
                                     </div>
@@ -157,17 +174,17 @@ export default function CreditsPage() {
                                 <div className="tech-category">
                                     <h3>Utilities & Libraries</h3>
                                     <div className="tech-item">
-                                        <span className="tech-icon">📄</span>
+                                        <FileText className="tech-icon" size={16} />
                                         <span className="tech-name">jsPDF</span>
                                         <span className="tech-version">3.0.1</span>
                                     </div>
                                     <div className="tech-item">
-                                        <span className="tech-icon">🎨</span>
+                                        <Palette className="tech-icon" size={16} />
                                         <span className="tech-name">Lucide React</span>
                                         <span className="tech-version">0.536.0</span>
                                     </div>
                                     <div className="tech-item">
-                                        <span className="tech-icon">🆔</span>
+                                        <Hash className="tech-icon" size={16} />
                                         <span className="tech-name">UUID</span>
                                         <span className="tech-version">11.1.0</span>
                                     </div>
@@ -177,12 +194,12 @@ export default function CreditsPage() {
                                 <div className="tech-category">
                                     <h3>Services & Fonts</h3>
                                     <div className="tech-item">
-                                        <span className="tech-icon">🚀</span>
+                                        <Rocket className="tech-icon" size={16} />
                                         <span className="tech-name">Netlify</span>
                                         <span className="tech-version">Hosting Platform</span>
                                     </div>
                                     <div className="tech-item">
-                                        <span className="tech-icon">🔤</span>
+                                        <Type className="tech-icon" size={16} />
                                         <span className="tech-name">Google Fonts</span>
                                         <span className="tech-version">Font Service</span>
                                     </div>
@@ -209,7 +226,7 @@ export default function CreditsPage() {
                             <h2 className="section-title">Contact & Support</h2>
                             <div className="contact-grid">
                                 <div className="contact-item">
-                                    <span className="contact-icon">🐛</span>
+                                    <Bug className="contact-icon" size={20} />
                                     <div className="contact-info">
                                         <h4>Issues & Bug Reports</h4>
                                         <a
@@ -223,7 +240,7 @@ export default function CreditsPage() {
                                 </div>
 
                                 <div className="contact-item">
-                                    <span className="contact-icon">💬</span>
+                                    <MessageCircle className="contact-icon" size={20} />
                                     <div className="contact-info">
                                         <h4>Community Discord</h4>
                                         <a
@@ -237,7 +254,7 @@ export default function CreditsPage() {
                                 </div>
 
                                 <div className="contact-item">
-                                    <span className="contact-icon">📧</span>
+                                    <Mail className="contact-icon" size={20} />
                                     <div className="contact-info">
                                         <h4>Direct Contact</h4>
                                         <a href="mailto:omarfaruksxp@gmail.com">omarfaruksxp@gmail.com</a>

@@ -5,6 +5,7 @@ import { FormData, RoutineData } from "@/types"
 import RoutineForm from "@/components/RoutineForm"
 import RoutineResult from "@/components/RoutineResult"
 import Footer from "@/components/Footer"
+import Banner from "@/components/Banner"
 
 export default function Home() {
     const [routineData, setRoutineData] = useState<RoutineData | null>(null)
@@ -13,9 +14,7 @@ export default function Home() {
     const [error, setError] = useState<string | null>(null)
 
     useEffect(() => {
-        // Keyboard shortcuts
         const handleKeyDown = (e: KeyboardEvent) => {
-            // Enter to submit form
             if (e.key === "Enter") {
                 const form = document.querySelector("form")
                 if (form && !loading) {
@@ -23,19 +22,15 @@ export default function Home() {
                 }
             }
 
-            // Ctrl/Cmd + D to download PDF
             if ((e.ctrlKey || e.metaKey) && e.key === "d") {
                 e.preventDefault()
                 if (routineData) {
-                    // This will be handled by the RoutineResult component
                 }
             }
 
-            // Ctrl/Cmd + J to download JSON
             if ((e.ctrlKey || e.metaKey) && e.key === "j") {
                 e.preventDefault()
                 if (routineData) {
-                    // This will be handled by the RoutineResult component
                 }
             }
         }
@@ -75,6 +70,7 @@ export default function Home() {
 
     return (
         <>
+            <Banner type="warning" message="The 1st semester routine for the 2024–25 session has been moved to 2024." />
             <div className="bg-animation">
                 <div className="floating-shapes">
                     <div className="shape"></div>

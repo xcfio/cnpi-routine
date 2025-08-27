@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from "react"
-import { Github, MessageCircle, Moon, Sun, HelpCircle, Star } from "lucide-react"
+import { Github, MessageCircle, Moon, Sun, HelpCircle, Star, Calendar } from "lucide-react"
 import "./Footer.css"
 
 export default function Footer() {
@@ -50,6 +50,10 @@ export default function Footer() {
                             <div className="footer-section">
                                 <h4>Quick Links</h4>
                                 <div className="quick-links">
+                                    <a href="/planner" className="quick-link" aria-label="Get Support">
+                                        <Calendar size={20} />
+                                        Planner
+                                    </a>
                                     <a href="/support" className="quick-link" aria-label="Get Support">
                                         <HelpCircle size={20} />
                                         Support

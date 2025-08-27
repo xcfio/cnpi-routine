@@ -203,22 +203,6 @@ export default function PlannerApp() {
                             })}
                         </div>
 
-                        {/* Statistics */}
-                        <div className="stats-grid">
-                            <div className="stat-card stat-total">
-                                <div className="stat-number">{getMonthStats.totalDays}</div>
-                                <div className="stat-label">Total Days</div>
-                            </div>
-                            <div className="stat-card stat-working">
-                                <div className="stat-number">{getMonthStats.workingDays}</div>
-                                <div className="stat-label">Working Days</div>
-                            </div>
-                            <div className="stat-card stat-off">
-                                <div className="stat-number">{getMonthStats.offDays}</div>
-                                <div className="stat-label">Off Days</div>
-                            </div>
-                        </div>
-
                         {/* Selected Date Information */}
                         {selectedDate && (
                             <div className="selected-date-info">
@@ -295,6 +279,22 @@ export default function PlannerApp() {
                                 </div>
                             </div>
                         )}
+
+                        {/* Statistics */}
+                        <div className="stats-grid">
+                            <div className="stat-card stat-total">
+                                <div className="stat-number">{getMonthStats.totalDays}</div>
+                                <div className="stat-label">Total Days</div>
+                            </div>
+                            <div className="stat-card stat-working">
+                                <div className="stat-number">{getMonthStats.workingDays}</div>
+                                <div className="stat-label">Working Days</div>
+                            </div>
+                            <div className="stat-card stat-off">
+                                <div className="stat-number">{getMonthStats.offDays}</div>
+                                <div className="stat-label">Off Days</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

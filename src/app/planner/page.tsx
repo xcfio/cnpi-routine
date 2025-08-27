@@ -1,10 +1,11 @@
 "use client"
 import { Calendar, ChevronLeft, ChevronRight, AlertCircle } from "lucide-react"
-import { planner, years, months, DaysOfMonth } from "@/utils/planner"
+import { planner as RawPlanner, years, months, DaysOfMonth } from "@/utils/planner"
 import React, { useState, useMemo } from "react"
 import Footer from "@/components/Footer"
 import "./style.css"
 
+const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 const monthNames = [
     "January",
     "February",
@@ -19,8 +20,13 @@ const monthNames = [
     "November",
     "December"
 ]
-
-const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+const planner: {
+    [Y in number]?: {
+        [M in number]?: {
+            [D in number]?: { off: boolean; cause: string }
+        }
+    }
+} = { ...RawPlanner }
 
 export default function PlannerApp() {
     const [currentDate, setCurrentDate] = useState(new Date())
@@ -33,7 +39,6 @@ export default function PlannerApp() {
         const date = new Date(year, month - 1, day)
         const dayOfWeek = date.getDay()
 
-        // @ts-ignore
         const plannerEntry = planner[year]?.[month]?.[day as DaysOfMonth<months>]
         if (plannerEntry) {
             return { isOff: plannerEntry.off, cause: plannerEntry.cause }
@@ -164,21 +169,26 @@ export default function PlannerApp() {
 
                                 if (dayInfo.isCurrentMonth) {
                                     const plannerEntry =
-                                        // @ts-ignore
                                         planner[currentYear]?.[currentMonth]?.[dayInfo.day as DaysOfMonth<months>]
                                     const dayOfWeek = dayInfo.date.getDay()
-                                    const isWeekendByDefault = dayOfWeek === 5 || dayOfWeek === 6
+                                    const WeekendByDefault = dayOfWeek === 5 || dayOfWeek === 6
 
-                                    if (
-                                        plannerEntry &&
-                                        ((plannerEntry.off && !isWeekendByDefault) ||
-                                            (!plannerEntry.off && isWeekendByDefault))
-                                    ) {
-                                        dayClass += " special-override"
-                                    } else if (dayInfo.isOff) {
-                                        dayClass += " off-day"
+                                    if (plannerEntry) {
+                                        if (WeekendByDefault) {
+                                            if (dayInfo.isOff) {
+                                                dayClass += " off-day"
+                                            } else {
+                                                dayClass += " special-override"
+                                            }
+                                        } else {
+                                            dayClass += " off-day"
+                                        }
                                     } else {
-                                        dayClass += " working-day"
+                                        if (WeekendByDefault) {
+                                            dayClass += " off-day"
+                                        } else {
+                                            dayClass += " working-day"
+                                        }
                                     }
                                 }
 
@@ -253,25 +263,28 @@ export default function PlannerApp() {
                                         <span className="detail-value">
                                             {(() => {
                                                 const plannerEntry =
-                                                    // @ts-ignore
-                                                    planner[selectedDate.getFullYear() as years]?.[
-                                                        (selectedDate.getMonth() + 1) as months
-                                                    ]?.[selectedDate.getDate() as DaysOfMonth<months>]
+                                                    planner[selectedDate.getFullYear()]?.[
+                                                        selectedDate.getMonth() + 1
+                                                    ]?.[selectedDate.getDate()]
                                                 const dayOfWeek = selectedDate.getDay()
-                                                const isWeekendByDefault = dayOfWeek === 5 || dayOfWeek === 6
+                                                const WeekendByDefault = dayOfWeek === 5 || dayOfWeek === 6
 
-                                                if (
-                                                    plannerEntry &&
-                                                    ((plannerEntry.off && !isWeekendByDefault) ||
-                                                        (!plannerEntry.off && isWeekendByDefault))
-                                                ) {
-                                                    return "Special Override"
-                                                } else if (plannerEntry) {
-                                                    return "Custom Entry"
-                                                } else if (isWeekendByDefault) {
-                                                    return "Regular Weekend"
+                                                if (plannerEntry) {
+                                                    if (WeekendByDefault) {
+                                                        if (plannerEntry.off) {
+                                                            return "Holiday"
+                                                        } else {
+                                                            return "Special Override"
+                                                        }
+                                                    } else {
+                                                        return "Holiday"
+                                                    }
                                                 } else {
-                                                    return "Regular Weekday"
+                                                    if (WeekendByDefault) {
+                                                        return "Regular Weekend"
+                                                    } else {
+                                                        return "Regular Weekday"
+                                                    }
                                                 }
                                             })()}
                                         </span>

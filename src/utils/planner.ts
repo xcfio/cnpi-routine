@@ -1,31 +1,27 @@
-// utils/planner.ts
 export const planner: Planner = {
     2025: {
         9: {
-            5: { off: true, cause: "Eid-e-Miladunnabi (Prophet Muhammad’s Birthday)" },
-            6: { off: true, cause: "Madhu Purnima (Buddhist Festival)" },
-            21: { off: true, cause: "Mahalaya (Durga Puja Begins)" },
+            5: { off: true, cause: "Eid e-Milad-un Nabi" },
+            6: { off: true, cause: "Madhu Purnima" },
+            21: { off: true, cause: "Mahalaya" },
             29: { off: true, cause: "Durga Puja" },
-            30: { off: true, cause: "Durga Puja" }
+            30: { off: true, cause: "Ashtami" }
         },
         10: {
-            1: { off: true, cause: "Durga Puja Navami" },
-            2: { off: true, cause: "Bijoya Dashami (Victory of Durga)" },
-            6: { off: true, cause: "Lakshmi Puja (Kojagori Lakshmi Puja)" }
-        },
-        11: {
-            6: { off: true, cause: "Maha Purnima (Bodhi Purnima Buddhist Festival)" },
-            24: { off: true, cause: "Kali Puja (Shyama Puja)" },
-            25: { off: true, cause: "Kali Puja (Shyama Puja)" }
+            1: { off: true, cause: "Mahanabami" },
+            2: { off: true, cause: "Durga Puja" },
+            4: { off: true, cause: "Fateha-i-Yajdaham" },
+            6: { off: true, cause: "Lakshmi Puja" },
+            20: { off: true, cause: "Sri Shayama Puja" }
         },
         12: {
-            16: { off: true, cause: "Victory Day (Bijoy Dibosh)" },
+            16: { off: true, cause: "Victory Day" },
             25: { off: true, cause: "Christmas Day" }
         }
     },
     2026: {
         2: {
-            21: { off: true, cause: "International Mother Language Day (Language Martyrs’ Day)" }
+            4: { off: true, cause: "Shab e-Barat" }
         }
     }
 }

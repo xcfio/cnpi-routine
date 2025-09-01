@@ -5,7 +5,6 @@ import { FormData, RoutineData } from "@/types"
 import RoutineForm from "@/components/RoutineForm"
 import RoutineResult from "@/components/RoutineResult"
 import Footer from "@/components/Footer"
-import Banner from "@/components/Banner"
 
 export default function Home() {
     const [routineData, setRoutineData] = useState<RoutineData | null>(null)
@@ -70,7 +69,6 @@ export default function Home() {
 
     return (
         <>
-            <Banner type="warning" message="The 1st semester routine for the 2024–25 session has been moved to 2024." />
             <div className="bg-animation">
                 <div className="floating-shapes">
                     <div className="shape"></div>

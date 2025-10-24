@@ -54,8 +54,8 @@ export default function RoutineForm({ onSubmit, loading }: RoutineFormProps) {
                             required
                         >
                             <option value="">Select Year</option>
-                            <option value="2025">2025-26</option>
-                            <option value="2024">2024-25</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
                         </select>
                     </div>
 

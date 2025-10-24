@@ -5,7 +5,7 @@ export const room = {
     DRG: "DRG (S-513)",
     EPL: "EPL (S-516)",
     EWM: "EWM (S-314)",
-    FLD: "FLD (S-113)",
+    FLD: "College Field",
     FLU: "FLU (N-207)",
     FPL: "FPL (N-509)",
     HWL: "HWL (N-416)",

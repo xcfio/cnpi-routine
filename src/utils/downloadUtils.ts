@@ -2,15 +2,18 @@ import { RoutineData } from "@/types"
 import { room } from "./lab"
 
 export const downloadJSON = (data: RoutineData) => {
-    const dataStr = JSON.stringify(data, null, 4)
-    const dataBlob = new Blob([dataStr], { type: "application/json" })
-    const url = URL.createObjectURL(dataBlob)
+    const string = JSON.stringify(data, null, 4)
+    const bin = new Blob([string], { type: "application/json" })
 
+    const url = URL.createObjectURL(bin)
     const link = document.createElement("a")
+
     link.href = url
     link.download = `${data.code}.json`
+
     document.body.appendChild(link)
     link.click()
+
     document.body.removeChild(link)
     URL.revokeObjectURL(url)
 }

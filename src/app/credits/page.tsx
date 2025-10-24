@@ -18,6 +18,8 @@ import {
     Mail
 } from "lucide-react"
 import "./style.css"
+import { dependencies, devDependencies } from "../../../package.json"
+import { exec } from "node:child_process"
 
 export const metadata: Metadata = {
     title: "Credits - CNPI Routine",
@@ -62,7 +64,7 @@ export default function CreditsPage() {
                                 <div className="contributor-simple">
                                     <span className="contributor-name">Omar Faruk</span>
                                     <span className="contributor-dash">-</span>
-                                    <span className="contributor-work">Full Stack Developer</span>
+                                    <span className="contributor-work">Back-end Developer</span>
                                 </div>
                             </div>
                         </div>
@@ -97,11 +99,6 @@ export default function CreditsPage() {
                                             Provided inspiration and motivation for this project
                                         </span>
                                     </div>
-                                    <div className="contributor-simple">
-                                        <span className="contributor-name">Firoja Khatun</span>
-                                        <span className="contributor-dash">-</span>
-                                        <span className="contributor-work">Helped with beta testing and feedback</span>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -116,17 +113,17 @@ export default function CreditsPage() {
                                     <div className="tech-item">
                                         <Circle className="tech-icon" size={16} color="#22c55e" />
                                         <span className="tech-name">Node.js</span>
-                                        <span className="tech-version">v24.4.1</span>
+                                        <span className="tech-version">{process.version}</span>
                                     </div>
                                     <div className="tech-item">
                                         <Package className="tech-icon" size={16} />
                                         <span className="tech-name">pnpm</span>
-                                        <span className="tech-version">v10.14.0</span>
+                                        <span className="tech-version">v10.16.0</span>
                                     </div>
                                     <div className="tech-item">
                                         <Code2 className="tech-icon" size={16} color="#3b82f6" />
                                         <span className="tech-name">TypeScript</span>
-                                        <span className="tech-version">5.8.3</span>
+                                        <span className="tech-version">{devDependencies.typescript}</span>
                                     </div>
                                 </div>
 
@@ -136,17 +133,17 @@ export default function CreditsPage() {
                                     <div className="tech-item">
                                         <Atom className="tech-icon" size={16} color="#61dafb" />
                                         <span className="tech-name">React</span>
-                                        <span className="tech-version">19.1.1</span>
+                                        <span className="tech-version">{dependencies.react}</span>
                                     </div>
                                     <div className="tech-item">
                                         <Atom className="tech-icon" size={16} color="#61dafb" />
                                         <span className="tech-name">React DOM</span>
-                                        <span className="tech-version">19.1.1</span>
+                                        <span className="tech-version">{dependencies["react-dom"]}</span>
                                     </div>
                                     <div className="tech-item">
                                         <Triangle className="tech-icon" size={16} />
                                         <span className="tech-name">Next.js</span>
-                                        <span className="tech-version">15.4.5</span>
+                                        <span className="tech-version">{dependencies.next}</span>
                                     </div>
                                 </div>
 
@@ -156,17 +153,17 @@ export default function CreditsPage() {
                                     <div className="tech-item">
                                         <Zap className="tech-icon" size={16} color="#f59e0b" />
                                         <span className="tech-name">Fastify</span>
-                                        <span className="tech-version">5.4.0</span>
+                                        <span className="tech-version">^5.4.0</span>
                                     </div>
                                     <div className="tech-item">
                                         <Database className="tech-icon" size={16} />
                                         <span className="tech-name">Drizzle ORM</span>
-                                        <span className="tech-version">0.44.3</span>
+                                        <span className="tech-version">^0.44.4</span>
                                     </div>
                                     <div className="tech-item">
                                         <Database className="tech-icon" size={16} color="#336791" />
                                         <span className="tech-name">PostgreSQL</span>
-                                        <span className="tech-version">17.5</span>
+                                        <span className="tech-version">v17.5.0</span>
                                     </div>
                                 </div>
 
@@ -176,17 +173,17 @@ export default function CreditsPage() {
                                     <div className="tech-item">
                                         <FileText className="tech-icon" size={16} />
                                         <span className="tech-name">jsPDF</span>
-                                        <span className="tech-version">3.0.1</span>
+                                        <span className="tech-version">{dependencies.jspdf}</span>
                                     </div>
                                     <div className="tech-item">
                                         <Palette className="tech-icon" size={16} />
                                         <span className="tech-name">Lucide React</span>
-                                        <span className="tech-version">0.536.0</span>
+                                        <span className="tech-version">{dependencies["lucide-react"]}</span>
                                     </div>
                                     <div className="tech-item">
                                         <Hash className="tech-icon" size={16} />
                                         <span className="tech-name">UUID</span>
-                                        <span className="tech-version">11.1.0</span>
+                                        <span className="tech-version">^13.0.0</span>
                                     </div>
                                 </div>
 

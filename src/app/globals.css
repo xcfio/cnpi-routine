@@ -30,7 +30,7 @@
 [data-theme="light"] {
     --primary-gradient: linear-gradient(145deg, #74b9ff 0%, #0984e3 40%, #00cec9 100%);
     --secondary-gradient: linear-gradient(135deg, #64b1d4 0%, #3366e9 100%);
-    --success-gradient: linear-gradient(135deg, #34e6b3 0%, #29a78d 100%);
+    --success-gradient: linear-gradient(135deg, #3366e9 0%, #29a796 100%);
     --danger-gradient: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
     --footer-gradient: linear-gradient(270deg, #a29bfe 0%, #6c5ce7 100%);
 

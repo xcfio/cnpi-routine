@@ -21,7 +21,7 @@
         "test": "tsc --NoEmit"
     },
     "dependencies": {
-        "jspdf": "^3.0.1",
+        "jspdf": "^4.0.0",
         "lucide-react": "^0.562.0",
         "next": "^16.0.0",
         "react": "^19.2.0",

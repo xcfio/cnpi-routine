@@ -37,6 +37,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <meta property="og:site_name" content="CNPI Routine" />
                 <meta property="og:type" content="website" />
                 <meta property="og:image:alt" content="Chapainawabganj Polytechnic Institute Class Routine" />
+                <script
+                    defer
+                    src="https://cool-xcfio.vercel.app/script.js"
+                    data-website-id="9ea8fa35-be29-4edd-8cf8-fad7000fe088"
+                ></script>
             </head>
             <body>{children}</body>
         </html>
